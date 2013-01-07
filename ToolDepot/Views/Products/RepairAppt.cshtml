@@ -1,0 +1,56 @@
+﻿@model ToolDepot.Models.Products.RepairApptModel
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>Schedule A Repair Appointment</h3>
+    </div>
+    <div class="modal-body">
+        <div>
+            <div class="pull-left margin-right-10">
+                @Html.LabelFor(model => model.Name)
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+            <div class="pull-left">
+                @Html.LabelFor(model => model.PhoneNumber)
+                @Html.EditorFor(model => model.PhoneNumber)
+                @Html.ValidationMessageFor(model => model.PhoneNumber)
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div>
+            @Html.LabelFor(model => model.CompanyName)
+            @Html.EditorFor(model => model.CompanyName)
+            @Html.ValidationMessageFor(model => model.CompanyName)
+            
+            @Html.LabelFor(model => model.ToolName)
+            @Html.EditorFor(model => model.ToolName)
+            @Html.ValidationMessageFor(model => model.ToolName)
+        </div>
+        <div>
+            <label>Please select a day and time you would like to come in</label>
+            <div class="pull-left margin-right-10">
+                @Html.DropDownListFor(x => x.ScheduledDate, Model.Dates)
+                @Html.ValidationMessageFor(x=>x.ScheduledDate)
+            </div>
+            <div class="pull-left">
+                @Html.DropDownListFor(x => x.ScheduledTimes, Model.Times)
+                @Html.ValidationMessageFor(x=>x.ScheduledTimes)
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        @Html.LabelFor(model => model.RepairDescription)
+        @Html.TextAreaFor(model => model.RepairDescription, new { Class = "contactbox" })
+        @Html.ValidationMessageFor(model => model.RepairDescription)
+
+
+    </div>
+    <div class="modal-footer">
+        <input type="submit" value="Schedule" class="btn btn-primary" />
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+    </div>
+}

@@ -1,0 +1,28 @@
+﻿@model ToolDepot.Models.Products.CategoriesModel
+
+@{
+    ViewBag.Title = "AllCategories";
+}
+<h2>All Product Categories</h2>
+
+<ul class="nav nav-tabs hide">
+    <li class="active">
+        <a href="#">All Products</a>
+    </li>
+</ul>
+<div class="tab-content">
+    <div id="general" class="tab-pane fade active in">
+        @foreach (var item in Model.Categories)
+        {
+            <div class="product">
+                <a href="/Products/Category/@item.Id">
+                    <img src="/Content/images/Products/@item.CategoryImage" class="img-rounded image-small align-center" />
+                    <div class=""></div>
+                    <div class="margin-top-10 margin-bottom-10">
+                        @item.CategoryName
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</div>

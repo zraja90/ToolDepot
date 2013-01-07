@@ -1,0 +1,66 @@
+﻿@using ToolDepot.Models
+@{
+    //success messages
+    var successMessages = new List<string>();
+    if (TempData[string.Format("tooldepot.notifications.{0}", NotifyType.Success)] != null)
+    {
+        successMessages.AddRange(TempData[string.Format("tooldepot.notifications.{0}", NotifyType.Success)] as IList<string>);
+    }
+    if (ViewData[string.Format("tooldepot.notifications.{0}", NotifyType.Success)] != null)
+    {
+        successMessages.AddRange(ViewData[string.Format("tooldepot.notifications.{0}", NotifyType.Success)] as IList<string>);
+    }
+
+
+    //error messages
+    var errorMessages = new List<string>();
+    if (TempData[string.Format("tooldepot.notifications.{0}", NotifyType.Error)] != null)
+    {
+        errorMessages.AddRange(TempData[string.Format("tooldepot.notifications.{0}", NotifyType.Error)] as IList<string>);
+    }
+    if (ViewData[string.Format("tooldepot.notifications.{0}", NotifyType.Error)] != null)
+    {
+        errorMessages.AddRange(ViewData[string.Format("tooldepot.notifications.{0}", NotifyType.Error)] as IList<string>);
+    }
+    
+    // info messages
+    var infoMessages = new List<string>();
+    if (TempData[string.Format("tooldepot.notifications.{0}", NotifyType.Info)] != null)
+    {
+        infoMessages.AddRange(TempData[string.Format("tooldepot.notifications.{0}", NotifyType.Info)] as IList<string>);
+    }
+    if (ViewData[string.Format("tooldepot.notifications.{0}", NotifyType.Info)] != null)
+    {
+        infoMessages.AddRange(ViewData[string.Format("tooldepot.notifications.{0}", NotifyType.Info)] as IList<string>);
+    }
+}
+
+@foreach (var message in successMessages)
+{
+    <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        @message
+    </div>
+    <div class="clear">
+    </div>
+}
+
+@foreach (var message in errorMessages)
+{
+    <div class="alert alert-error">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        @message
+    </div>
+    <div class="clear">
+    </div>
+}
+
+@foreach (var message in infoMessages)
+{
+    <div class="alert alert-info">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        @message
+    </div>
+    <div class="clear">
+    </div>
+}

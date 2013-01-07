@@ -1,0 +1,15 @@
+﻿@model ToolDepot.Models.Common.SubscriptionModel
+
+<p>Sign up to receive special offers and weekly promotions from Tool Depot Inc.</p>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="editor-label">
+        @Html.LabelFor(model => model.EmailAddress)
+    </div>
+    <div class="input-append">
+        @Html.TextBoxFor(m => m.EmailAddress, new { placeholder = "Enter Email Address", type = "email", required = "", Class = "input-medium" })
+        <input type="submit" value="Submit" class="btn" />
+        @Html.ValidationMessageFor(m => m.EmailAddress)
+    </div>
+}

@@ -1,0 +1,412 @@
+﻿body {
+  background-color: #323B44 !important;
+}
+/*alignment*/
+.align-center {
+  text-align: center;
+}
+.align-right {
+  text-align: right;
+}
+.align-left {
+  text-align: left;
+}
+/* Padding and Margins*/
+.margin-left-0 {
+  margin-left: 0 !important;
+}
+.margin {
+  margin: 0 auto;
+}
+.margin-top {
+  margin-top: 20px !important;
+}
+.margin-top-5 {
+  margin-top: 5px !important;
+}
+.margin-top-10 {
+  margin-top: 10px !important;
+}
+.margin-bottom {
+  margin-bottom: 20px !important;
+}
+.margin-bottom-5 {
+  margin-bottom: 5px !important;
+}
+.margin-bottom-10 {
+  margin-bottom: 10px !important;
+}
+.margin-right {
+  margin-right: 20px !important;
+}
+.margin-right-5 {
+  margin-right: 5px !important;
+}
+.margin-right-10 {
+  margin-right: 10px !important;
+}
+.margin-left {
+  margin-left: 20px !important;
+}
+.margin-left-double {
+  margin-left: 40px !important;
+}
+.margin-left-5 {
+  margin-left: 5px !important;
+}
+.margin-left-10 {
+  margin-left: 10px !important;
+}
+.padding-left {
+  padding-left: 20px !important;
+}
+.no-margin {
+  margin: 0 !important;
+}
+#contentWrap {
+  min-height: 100%;
+  margin: 0 auto -40px;
+  background-color: #fff;
+  width: 960px;
+  /*border-left: 1px solid #DDD;
+	border-right: 1px solid #DDD;
+*/
+  -moz-box-shadow: 0 0 1px #888;
+  -webkit-box-shadow: 0 0 1px#888;
+  box-shadow: 0 0 1px #888;
+}
+#mainContainer {
+  padding: 15px 30px;
+  width: 900px;
+}
+#topNavHeader {
+  position: relative;
+  min-height: 100px;
+  background-color: #fff;
+}
+#topNavHeader .container {
+  width: 920px;
+  position: relative;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #EEE;
+  margin-bottom: 15px;
+}
+#topNavHeader li {
+  list-style: none;
+}
+#topNavHeader .brand {
+  padding-top: 25px;
+  min-width: 100px;
+}
+#topNavHeader .brand .logo {
+  height: 70px;
+  width: 340px;
+  padding-right: 20px;
+}
+#topNavHeader .brand .program-name {
+  color: #60100C;
+  padding-top: 21px;
+  font-size: 16px;
+  float: left;
+}
+#topNavHeader .top-actions {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+}
+#topNavHeader .top-actions a {
+  color: #60100C;
+}
+#topNavHeader nav ul {
+  float: right;
+  margin: 20px 20px 0;
+}
+#topNavHeader nav ul li {
+  float: left;
+  padding: 10px 10px;
+  font-weight: bold;
+  color: #555;
+  font-size: 17px;
+}
+#topNavHeader nav ul li:hover {
+  cursor: pointer;
+}
+#topNavHeader nav ul li.active a {
+  padding-bottom: 10px;
+}
+#topNavHeader nav ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+#topNavHeader nav ul li a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+.under-construction .image {
+  width: 225px;
+  height: 150px;
+}
+.brochure {
+  display: block;
+}
+.image-small {
+  height: 150px;
+}
+.product {
+  width: 220px;
+  margin-bottom: 20px;
+  float: left;
+}
+/* Add additional stylesheets below
+-------------------------------------------------- */
+/*
+  Bootstrap's documentation styles
+  Special styles for presenting Bootstrap's documentation and examples
+*/
+/* Body and structure
+-------------------------------------------------- */
+/* Social proof buttons from GitHub & Twitter */
+.bs-docs-social {
+  padding: 15px 0;
+  text-align: center;
+  background-color: #f5f5f5;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #ddd;
+}
+/* Quick links on Home */
+.bs-docs-social-buttons {
+  margin-left: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.bs-docs-social-buttons li {
+  display: inline-block;
+  padding: 5px 8px;
+  line-height: 1;
+  *display: inline;
+  *zoom: 1;
+}
+/* Footer
+-------------------------------------------------- */
+.footer {
+  padding: 70px 0;
+  margin-top: 70px;
+  border-top: 1px solid #e5e5e5;
+  background-color: #f5f5f5;
+}
+.footer p {
+  margin-bottom: 0;
+  color: #777;
+}
+.footer-links {
+  margin: 10px 0;
+}
+.footer-links li {
+  display: inline;
+  padding: 0 2px;
+}
+.footer-links li:first-child {
+  padding-left: 0;
+}
+/* Icons
+------------------------- */
+.the-icons {
+  margin-left: 0;
+  list-style: none;
+}
+.the-icons li {
+  float: left;
+  width: 25%;
+  line-height: 25px;
+}
+.the-icons i:hover {
+  background-color: rgba(255, 0, 0, 0.25);
+}
+/* Example page
+------------------------- */
+.bootstrap-examples p {
+  font-size: 13px;
+  line-height: 18px;
+}
+.bootstrap-examples .thumbnail {
+  margin-bottom: 9px;
+  background-color: #fff;
+}
+/* Tweak examples
+------------------------- */
+.bs-docs-example > p:last-child {
+  margin-bottom: 0;
+}
+.bs-docs-example .table,
+.bs-docs-example .progress,
+.bs-docs-example .well,
+.bs-docs-example .alert,
+.bs-docs-example .hero-unit,
+.bs-docs-example .pagination,
+.bs-docs-example .navbar,
+.bs-docs-example > .nav,
+.bs-docs-example blockquote {
+  margin-bottom: 5px;
+}
+.bs-docs-example .pagination {
+  margin-top: 0;
+}
+.bs-navbar-top-example,
+.bs-navbar-bottom-example {
+  z-index: 1;
+  padding: 0;
+  height: 90px;
+  overflow: hidden;
+  /* cut the drop shadows off */
+
+}
+.bs-navbar-top-example .navbar-fixed-top,
+.bs-navbar-bottom-example .navbar-fixed-bottom {
+  margin-left: 0;
+  margin-right: 0;
+}
+.bs-navbar-top-example {
+  -webkit-border-radius: 0 0 4px 4px;
+  -moz-border-radius: 0 0 4px 4px;
+  border-radius: 0 0 4px 4px;
+}
+.bs-navbar-top-example:after {
+  top: auto;
+  bottom: -1px;
+  -webkit-border-radius: 0 4px 0 4px;
+  -moz-border-radius: 0 4px 0 4px;
+  border-radius: 0 4px 0 4px;
+}
+.bs-navbar-bottom-example {
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
+}
+.bs-navbar-bottom-example .navbar {
+  margin-bottom: 0;
+}
+form.bs-docs-example {
+  padding-bottom: 19px;
+}
+/* Images */
+.bs-docs-example-images img {
+  margin: 10px;
+  display: inline-block;
+}
+/* Tooltips */
+.bs-docs-tooltip-examples {
+  text-align: center;
+  margin: 0 0 10px;
+  list-style: none;
+}
+.bs-docs-tooltip-examples li {
+  display: inline;
+  padding: 0 10px;
+}
+/* Popovers */
+.bs-docs-example-popover {
+  padding-bottom: 24px;
+  background-color: #f9f9f9;
+}
+.bs-docs-example-popover .popover {
+  position: relative;
+  display: block;
+  float: left;
+  width: 260px;
+  margin: 20px;
+}
+/* Sidenav for Docs
+-------------------------------------------------- */
+.bs-docs-sidenav {
+  margin: 30px 0 0;
+  padding: 0;
+  background-color: #fff;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+}
+.bs-docs-sidenav > li > a {
+  display: block;
+  margin: 0 0 -1px;
+  padding: 8px 14px !important;
+  border: 1px solid #e5e5e5;
+}
+.bs-docs-sidenav > li:first-child > a {
+  -webkit-border-radius: 6px 6px 0 0;
+  -moz-border-radius: 6px 6px 0 0;
+  border-radius: 6px 6px 0 0;
+}
+.bs-docs-sidenav > li:last-child > a {
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+}
+.bs-docs-sidenav > .active > a {
+  position: relative;
+  z-index: 2;
+  padding: 9px 15px;
+  border: 0;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.1), inset -1px 0 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.1), inset -1px 0 0 rgba(0, 0, 0, 0.1);
+  box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.1), inset -1px 0 0 rgba(0, 0, 0, 0.1);
+}
+/* Chevrons */
+.bs-docs-sidenav .icon-chevron-right {
+  float: right;
+  margin-top: 2px;
+  margin-right: -6px;
+  opacity: .25;
+}
+.bs-docs-sidenav > li > a:hover {
+  background-color: #f5f5f5;
+}
+.bs-docs-sidenav a:hover .icon-chevron-right {
+  opacity: .5;
+}
+.bs-docs-sidenav .active .icon-chevron-right,
+.bs-docs-sidenav .active a:hover .icon-chevron-right {
+  background-image: url(../img/glyphicons-halflings-white.png);
+  opacity: 1;
+}
+.bs-docs-sidenav.affix {
+  top: 40px;
+}
+.bs-docs-sidenav.affix-bottom {
+  position: absolute;
+  top: auto;
+  bottom: 270px;
+}
+.ProductList .product {
+  width: 140px;
+  min-height: 195px;
+  padding: 10px;
+  border: 1px solid rgba(30, 110, 244, 0.23);
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.ProductList .product:nth-child(5n) {
+  margin-right: 0;
+}
+.ProductList .product > .product-image {
+  height: 90px;
+  margin-bottom: 10px;
+}
+.ProductList .product > .title {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+  margin-bottom: 5px;
+}
+.ProductList .product > p {
+  font-weight: bold;
+  color: #888;
+}
+h1.blue {
+  color: #555;
+}

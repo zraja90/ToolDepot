@@ -1,0 +1,299 @@
+﻿@import "~/Content/bootstrap/variables.less";
+@import "~/Content/bootstrap/mixins.less";
+
+
+
+#contentWrap {
+  	//height: 100%;
+	min-width: 960px;
+}
+
+#mainContainer {
+	background-color: #fff;
+	padding: 15px 30px;
+    width: 900px;
+	margin:20px auto 0;
+
+}
+
+#contentPush {
+	height: @footerHeight + 20;
+}
+
+#topNavHeader {
+    position: relative;
+    min-height: 100px;
+    background-color: #323B44;
+
+    .container {
+        width: 940px;
+        position: relative;
+        padding-bottom: 5px;        
+    }
+
+    li {
+        list-style: none;
+    }
+	.contact-info{
+		color:#fff;
+	}
+	.white{
+		color:#fff;
+	}
+    .brand {
+        padding-top: 25px;
+        min-width: 100px;
+
+        .logo {
+            height: 70px;
+			width: 286px;
+            padding-right: 20px;
+        }
+
+        .program-name {
+            color: #60100C;
+            padding-top: 21px;
+            font-size: 16px;
+            float: left;
+        }
+    }
+
+    .top-actions {
+        position: absolute;
+        top: 10px;
+        right: 0px;
+
+        a {
+            color: #60100C;
+        }
+    }
+
+    nav ul {
+        float: right;
+        margin: 20px 20px 0;
+
+
+        li {
+            float: left;
+            padding: 10px 10px;
+            font-weight: bold;
+            color: #555;
+            font-size: 17px;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &.active {
+
+
+                a {
+                    padding-bottom: 10px;
+                }
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+
+                &:hover {
+                    text-decoration: none;
+                    color: inherit;
+                }
+            }
+        }
+    }
+}
+
+.under-construction {
+    .image {
+        width: 225px;
+        height: 150px;
+    }
+}
+
+.brochure {
+    display: block;
+}
+
+.image-small {
+    height: 150px;
+    
+}
+.product {
+	width: 200px;
+	margin-bottom:20px;
+	float:left;
+	margin-right: 20px;
+}
+
+
+.ProductList {
+    .product {
+        width: 140px;
+        min-height: 195px;
+        padding: 10px;
+        border: 1px solid rgba(30, 110, 244, 0.23);
+        margin-right: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+
+        &:nth-child(5n) {
+            margin-right: 0;
+        }
+
+        > .product-image {
+            height: 90px;
+            margin-bottom: 10px;
+        }
+
+        > .title {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 20px;
+            margin-bottom: 5px;
+        }
+
+        > p {
+            font-weight: bold;
+            color: #888;
+        }
+    }
+}
+
+
+
+//footer
+.footer {
+	padding: 10px 0px;	
+	.footerBox {
+		border: 1px solid #ccc;
+		.left-side {
+			border-right: 1px solid #ccc; 
+			padding: 5px 20px;
+			width: 220px;
+			float: left;
+		}
+		.right-side {
+			padding: 5px 20px;
+			float: left;
+			width: 400px;
+		}
+	}    
+}
+
+
+//header //nav
+
+nav {
+	position: relative;
+	z-index: 101;
+	background: #FAFAFA;
+	border-top: #EAEAEA 1px solid;
+	padding: 7px 0 7px 0;
+	box-shadow: 0 4px 11px #eaeaea;
+	border-bottom: 1px solid #CCD;
+}
+.main-nav {
+        margin: 0 auto;
+        width: 940px;
+        position: relative;
+    }
+
+    .horizontal-list {
+        display: inline-block;
+        float: left;
+        margin-bottom: 0;
+    }
+
+        .horizontal-list li.current {
+        }
+
+        .horizontal-list li:first-child {
+            border: none;
+        }
+
+        .horizontal-list > li {
+            text-align: center;
+            display: inline-block;
+            border-left: #E0E0E0 1px solid;
+        }
+
+        .horizontal-list li {
+            position: relative;
+            float: left;
+        }
+
+    ul.horizontal-list > li.current > a, ul.horizontal-list > li > a, ul.horizontal-list > li > a:hover {
+        color: #0B51A3;
+    }
+
+    ul.horizontal-list > li:first-child a {
+        padding-left: 0 !important;
+    }
+
+    ul.horizontal-list > li > a {
+        font-size: 16px;
+        line-height: 20px;
+        color: #848484;
+        display: block;
+        position: relative;
+        padding: 12px 29px 9px 29px;
+    }
+
+    .horizontal-list a:hover {
+        text-decoration: none;
+    }    
+	.crane-pic {
+        height: 51px;
+        width: 91px;
+        margin-right: 5px;
+    }
+
+//Hompage
+.services {
+	margin: 10px 0 10px 0;
+	padding-bottom: 20px;
+	border-bottom: 3px solid #ccc;
+	.service {
+		width: 430px;
+		margin-right: 20px;
+		.image {
+			width: 400px;
+			height: 140px;
+		}
+		p {
+			width: 375px;
+			height: 90px;
+		}
+	}
+}
+
+    
+
+
+//admin site
+.tab-content {
+	textarea {
+		height: 100px;
+		width: 500px;
+	}
+}
+
+.contactbox { 
+	width: 375px;
+}
+
+//validation
+.help-inline{
+	color: red !important;
+}
+
+//Product page
+.related-products {
+	border: 1px solid #ccc;
+	.related-title {
+		background-color: #ccc;
+		padding:10px;
+	}
+}

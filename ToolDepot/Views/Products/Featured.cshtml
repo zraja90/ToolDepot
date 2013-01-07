@@ -1,0 +1,25 @@
+﻿@model ToolDepot.Models.Products.BrochureModel
+@{
+    ViewBag.Title = "Featured";
+}
+
+<h1>Featured Tools & Equipment for Rent</h1>
+
+<div class="ProductList">
+    @foreach(var item in Model.Brochures)
+    {
+    <div class="pull-left product">
+        <img src="/Content/images/Products/@item.ProductImage" class="product-image" />
+        <div class="title">
+            @item.ProductName
+        </div>
+        <p>
+            @Html.Raw(item.ProductDescription)
+        </p>
+    </div>
+    }
+    <div class="clearfix"></div>
+</div>
+<div>
+    <div class="caption margin brochure">Prices and offers are subject to change.</div>
+</div>

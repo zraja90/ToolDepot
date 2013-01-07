@@ -1,0 +1,84 @@
+﻿@using ToolDepot.Helpers.Extensions
+@model ToolDepot.Models.Common.ContactUsModel
+@{
+    ViewBag.Title = "Contact Us";
+}
+
+
+
+<div class="well">
+    @{
+        Html.EnableClientValidation();
+    }
+    <div class="span6" style="border-right: 1px solid #ccc">
+        <h3>Contact Us:</h3>
+        @using (Html.BeginForm())
+        {
+            
+            @Html.ValidationSummary(true)
+            <div>
+                <div class="control-group">
+                    @Html.LabelFor(x => x.Name, new { Class = "control-label" })
+                    @Html.TextBoxFor(x => x.Name)
+                    @Html.ValidationMessageFor(x => x.Name)
+                </div>
+                <div class="control-group">
+                    @Html.LabelFor(x => x.EmailAddress, new { Class = "control-label" })
+                    @Html.TextBoxFor(x => x.EmailAddress, new { type = "email" })
+                    @Html.ValidationMessageFor(x => x.EmailAddress)
+                </div>
+                <div class="control-group">
+                    @Html.LabelFor(x => x.PhoneNumber)
+
+                    @Html.TextBoxFor(x => x.PhoneNumber, new { placeholder = "Required if would like a call back" })
+                    @Html.ValidationMessageFor(x => x.PhoneNumber)
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <label class="checkbox">
+                            @Html.CheckBoxFor(x => x.CallBack)
+                            Select if you would like us to call you back
+                        </label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    @Html.LabelFor(x => x.Message, new { Class = "control-label" })
+                    @Html.TextAreaFor(x => x.Message, new { rows = "5", Class = "contactbox" })
+                    @Html.ValidationMessageFor(x => x.Message)
+                </div>
+            </div>
+            <input type="submit" value="Submit" class="btn btn-primary" />
+            
+        }
+    </div>
+    <div class="span6">
+        <h3>Other Contact Info:</h3>
+        <section class="contact">
+            <header>
+                <h4>Phone</h4>
+            </header>
+            <p>
+                <span class="label">Main:</span>
+                <span>718-786-1500</span>
+            </p>
+            <p>
+                <span class="label">Secondary:</span>
+                <span>718-786-1505</span>
+            </p>
+        </section>
+        <section class="contact">
+            <header>
+                <h4>Address</h4>
+            </header>
+            <address>
+                Tool Depot Inc.<br />
+                43-77 9th St. <br/>
+                Long Island City, New York 11101
+            </address>
+            <iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=43-77+9th+st+lic&amp;ie=UTF8&amp;hq=&amp;hnear=43-77+9th+St,+Long+Island+City,+New+York+11101&amp;t=m&amp;ll=40.751158,-73.950713&amp;spn=0.004877,0.006437&amp;z=16&amp;output=embed"></iframe>
+            <br />
+            <small><a href="https://www.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=43-77+9th+st+lic&amp;ie=UTF8&amp;hq=&amp;hnear=43-77+9th+St,+Long+Island+City,+New+York+11101&amp;t=m&amp;ll=40.751158,-73.950713&amp;spn=0.004877,0.006437&amp;z=16" style="color: #0000FF; text-align: left">View Larger Map</a></small>
+        </section>
+    </div>
+    <div class="clearfix"></div>
+</div>

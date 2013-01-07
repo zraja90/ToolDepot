@@ -1,0 +1,27 @@
+Subject: [FirstName] has an inquiry about [ProductName]
+
+Body:
+
+[FirstName] [LastName] wants to inquire about [ProductName].
+
+Information about [FirstName]:
+
+First Name: [FirstName]
+Last Name: [LastName]
+Email: [Email]
+Company Name: [CompanyName] 
+Address: [Address]
+City: [City]
+State: [State] 
+ZipCode: [ZipCode] 
+Phone Number: [PhoneNumber] 
+Fax Number: [FaxNumber]
+Created Date: [CreatedDate]
+
+Message from [FirstName]:
+
+[Message]
+
+Please respond within a timely fashion
+
+Tool Depot

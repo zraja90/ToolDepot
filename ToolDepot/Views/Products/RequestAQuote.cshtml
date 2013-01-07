@@ -1,0 +1,58 @@
+﻿@model ToolDepot.Models.Products.RequestQuoteModel
+
+@{
+    ViewBag.Title = "Request A Quote";
+}
+
+<h2>Request A Quote</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div>
+        
+        <div class="well">
+            <fieldset>
+                <legend>Fill out the form below to get a quote
+                </legend>
+                <div class="control-group">
+                    @Html.LabelFor(x => x.CompanyName, new { Class = "control-label" })
+                    @Html.EditorFor(x => x.CompanyName)
+                    @Html.ValidationMessageFor(x => x.CompanyName)
+                </div>
+                <div class="control-group">
+                    @Html.LabelFor(x => x.Email, new { Class = "control-label" })
+                    @Html.EditorFor(x => x.Email)
+                    @Html.ValidationMessageFor(x => x.Email)
+                </div>
+                <div class="control-group">
+                    @Html.LabelFor(x => x.FirstName, new { Class = "control-label" })
+                    @Html.EditorFor(x => x.FirstName)
+                    @Html.ValidationMessageFor(x => x.FirstName)
+                </div>
+                <div class="control-group">
+                    @Html.LabelFor(x => x.LastName, new { Class = "control-label" })
+                    @Html.EditorFor(x => x.LastName)
+                    @Html.ValidationMessageFor(x => x.LastName)
+                </div>
+                <div class="control-group">
+                    @Html.LabelFor(x => x.ProductId, new { Class = "control-label" })
+                    @Html.DropDownListFor(x => x.ProductId, Model.AllProducts)
+                    
+                </div>
+                <div class="control-group">
+                    @Html.LabelFor(x => x.PhoneNumber, new { Class = "control-label" })
+                    @Html.EditorFor(x => x.PhoneNumber)
+                    @Html.ValidationMessageFor(x => x.PhoneNumber)
+                </div>
+                <div class="control-group">
+                    @Html.LabelFor(x => x.Message, new { Class = "control-label" })
+                    @Html.TextAreaFor(x => x.Message, new { Class = "contactbox" })
+                    @Html.ValidationMessageFor(x => x.Message)
+                </div>
+
+            </fieldset>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Submit" />
+    </div>
+}

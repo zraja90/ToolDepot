@@ -1,0 +1,22 @@
+﻿@model ToolDepot.Models.Products.CategoryWithProductsModel
+
+@{
+    ViewBag.Title = Model.Category.CategoryName;
+}
+<div class="margin-bottom-10">
+    @Html.ActionLink("Back to All Categories", "AllCategories")
+</div>
+<h1>Viewing Products in @Model.Category.CategoryName</h1>
+
+@foreach (var item in Model.Category.Products)
+{
+    <div class="product">
+        <a href="/Products/Product/@item.Id">
+            <img src="/content/images/Products/@item.Image" class="img-rounded image-small align-center" />
+            <div class="margin-top-10 margin-bottom-10">
+                @item.Name
+            </div>
+        </a>
+    </div>
+}
+<div class="clearfix"></div>

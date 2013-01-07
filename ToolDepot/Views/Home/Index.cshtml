@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Tool Rental, Equipment Rental, & Repair Services | Tool Depot";
+    ViewBag.Description = "Shop for all your tool & equipment needs: Boom Lift, Scissor Lift, Drills, Generators, Power Tools, Machinery Tools, Mason Frames, Scaffolding, and more at Tool Depot. The one stop shop for all your tool needs";
+    ViewBag.Keywords = "Tool Rentals, Equipment Rentals, Tool Sales, Equipment Sales, Repair Services, Hardware, Machinery Tools, Power Tools, Boom Lift, Scissor Lift";
+}
+
+<h1>One Stop Shop For All Your Tool Needs</h1>
+<div class="services">
+    <div class="pull-left service">
+        <img src="/Content/images/Tools.png" alt="Tool & Equipment Rental" class="image" />
+        <h4>Tools & Equipment Rental</h4>
+        <p>
+            We have a wide selection of high-quality equipment available from the most trusted, professional brands.  All of our tools are well-maintained and rental-ready. 
+        </p>
+        <div>
+            @Html.ActionLink("Explore Tools & Equipment", "AllCategories", "Products", null, new { Class = "btn btn-primary" })
+        </div>
+    </div>
+    <div class="pull-left service">
+        <img src="/Content/images/ToolRepair.png" alt="All Tools & Equipment Repair Service & Maintentance" class="image" />
+        <h4>Repair Services</h4>
+        <p>
+            We recognize that down equipment affects the performance of your workers, costing you both time and money. We are committed to repairing equipment, promptly, in order to keep your crew productive.
+        </p>
+        <div>
+            @Html.ActionLink("Schedule Repair Appointment", "RepairServices", "Products", null, new { Class = "btn btn-primary" })
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div>
+    <div class="span4">
+        <h4>Why Rent? Only pay for what you need.</h4>
+        <p>
+            Why spend a lot of money on something you’ll use once?  For those rare jobs when a special piece of equipment is needed, renting is the cost-effective way to get what you need without spending too much
+        </p>
+    </div>
+    <div class="span4">
+        <h4>Will This Really Get The Job Done For Me?</h4>
+        <p>
+            Ever buy a tool only to find out it’s not what you really needed?  Finding out a tool or piece of equipment doesn’t perfectly fit your needs after you’ve made the purchase is a costly discovery.  If you’re simply not sure, rent first. Try it out before committing to a purchase.
+        </p>
+    </div>
+    <div class="span4">
+        <h4>No Storage...No Maintenance...No Hassles</h4>
+        <p>
+            With Tool Depot, you eliminate all the headaches of storing, maintaining and repairing equipment by renting.  Get what you need when you need it and enjoy the assurance of a performance guarantee. We handle the maintenance, the storage and any repairs should something fail. 
+        </p>
+    </div>
+    <div class="clearfix"></div>
+</div>

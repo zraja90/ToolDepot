@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @if (ViewBag.Description != null)
+    {
+        <meta name="description" content="@ViewBag.Description" />
+    }
+    @if (ViewBag.Keywords != null)
+    {
+        <meta name="keywords" content="@ViewBag.Keywords" />
+    }
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    
+    @Styles.Render("~/Content/less")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/modernizr")
+    
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+   <!--[if lt IE 9]>
+            @Scripts.Render("~/bundles/html5")          
+    <![endif]-->
+    @*<script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36609856-1']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>*@
+</head>
+<body>
+    <div id="contentWrap">
+        <div class="container">
+            <header>
+                @*@Html.Action("Header", "Common", new {Area = ""})*@
+            </header>
+        </div>
+        <div id="mainContainer" class="container margin-bottom">
+            <section class="row-fluid margin-bottom">
+                <div class="span12">
+                    @Html.Partial("_Notifications")
+                    @RenderBody()
+                </div>
+            </section>
+            <footer>
+                @*@Html.Action("Footer", "Common", new {Area = ""})*@
+            </footer>
+            @RenderSection("scripts", required: false)
+        </div>
+    </div>
+</body>
+</html>

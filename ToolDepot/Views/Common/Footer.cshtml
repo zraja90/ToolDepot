@@ -1,0 +1,37 @@
+﻿<footer class="footer">
+    <div class="footerBox">
+        <div class="left-side">
+            <h4>Connect with Tool Depot</h4>
+            @Html.Action("SubscriptionModule")
+            <p>Can't find what you're looking for? Please call us: </p>
+            <p>
+                <abbr title="Phone">P:</abbr>
+                718-786-1500
+            <br />
+                <abbr title="Phone">P:</abbr>
+                718-786-1505
+            </p>
+            <p>Or come visit us:</p>
+            <address>
+                <strong>Tool Depot Inc.</strong><br />
+                43-77 9th St<br />
+                Long Island City, NY 11101
+            </address>
+        </div>
+        @Html.Action("ProductCategories", "Home")
+        <div class="clearfix"></div>
+    </div>
+    <div class="margin-top">
+        <p class="pull-left margin-right">&copy; @DateTime.Now.Year - Tool Depot Inc.</p>
+        <div class="align-center span9">
+            @Html.ActionLink("Home", "Index", "Home") | 
+            @Html.ActionLink("Products", "AllCategories", "Products") | 
+            @Html.ActionLink("Weekly Ad", "Featured", "Products") | 
+            <a href="#myRepairApptModal" role="button" data-toggle="modal">Schedule Repair Appointment</a> |
+            @Html.ActionLink("Contact Us", "Contact", "Home") | 
+            @Html.ActionLink("About Us", "About", "Home")
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+</footer>

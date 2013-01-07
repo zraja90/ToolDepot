@@ -1,0 +1,55 @@
+﻿@model ToolDepot.Areas.Admin.Models.Products.CreateProductModel
+
+@{
+    ViewBag.Title = "Create New Product";
+}
+
+<h2>Create Cew Product</h2>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <div class="form-horizontal">
+        <div class="control-group">
+            @Html.LabelFor(model => model.Name, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(model => model.Description, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Description, new {required = "required"})
+                @Html.ValidationMessageFor(model => model.Description)
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(model => model.Image, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Image)
+                @Html.ValidationMessageFor(model => model.Image)
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(model => model.CategoryName, new { @class = "control-label" })
+            <div class="controls">
+                @Html.DropDownListFor(model => model.CategoryId, Model.AllCategories)
+                @Html.ValidationMessageFor(model => model.CategoryId)
+                </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(model => model.IsFeatured, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.IsFeatured)
+                @Html.ValidationMessageFor(model => model.IsFeatured)
+            </div>
+        </div>
+        <div>
+            <input type="submit" name="save" class="btn btn-primary" value="Create Product" />
+        </div>
+    </div>
+}

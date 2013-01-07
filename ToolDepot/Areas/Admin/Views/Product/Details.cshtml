@@ -1,0 +1,91 @@
+﻿@model ToolDepot.Areas.Admin.Models.Products.ProductDetailModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Product.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+<table class="table table-striped">
+    <tr>
+        <th>Text
+        </th>
+        <th>Value
+        </th>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>
+            @Model.Product.Name
+        </td>
+    </tr>
+    <tr>
+        <td>Description
+        </td>
+        <td>
+            @Model.Product.Description
+        </td>
+    </tr>
+    <tr>
+        <td>Category
+        </td>
+        <td>
+            @Model.Product.Category.CategoryName
+        </td>
+    </tr>
+    <tr>
+        <td>Image
+        </td>
+        <td>
+            <img src="@Model.Product.Image" height="50" width="50" />
+        </td>
+    </tr>
+    <tr>
+        <td>Created Date
+        </td>
+        <td>
+            @Model.Product.CreatedDate
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Features
+        </td>
+        <td>
+            @if (Model.Product.ProductFeatures.Any())
+            {
+                <ul>
+                    @foreach (var feature in Model.Product.ProductFeatures)
+                    {
+                        <li>
+                            @feature.Feature
+                        </li>
+                    }
+                </ul>
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Specs
+        </td>
+        <td>
+            @if (Model.Product.ProductSpecs.Any())
+            {
+                <ul>
+                    @foreach (var specs in Model.Product.ProductSpecs)
+                    {
+                        <li>
+                            @specs.Specs
+                        </li>
+                    }
+                </ul>
+            }
+        </td>
+    </tr>
+</table>

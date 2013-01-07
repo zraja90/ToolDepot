@@ -1,0 +1,16 @@
+﻿@model ToolDepot.Models.Products.CategoriesModel
+
+<div class="right-side">
+    <h4>Browse Categories</h4>
+    <ul class="unstyled">
+        @foreach (var category in Model.Categories)
+        {
+            <li>
+                @Html.ActionLink(@category.CategoryName, "Category", "Products", new { id = category.Id }, null)
+            </li>
+        }
+    </ul>
+    <div class="pull-right">
+        @Html.ActionLink("Explore All Categories", "AllCategories", "Products", null, new { Class = "" })
+    </div>
+</div>

@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title | Tool Rental, Equipment Rental, & Repair Services | Tool Depot</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @if (!string.IsNullOrEmpty(ViewBag.Description))
+    {
+        <meta name="description" content="@ViewBag.Description" />
+    }
+    @if (!string.IsNullOrEmpty(ViewBag.Keywords))
+    {
+        <meta name="keywords" content="@ViewBag.Keywords" />
+    }
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Styles.Render("~/Content/less")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/validation")
+
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+            @Scripts.Render("~/bundles/html5")          
+    <![endif]-->
+    @*<script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36609856-1']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>*@
+</head>
+<body>
+    <div id="contentWrap">
+        @Html.Action("Header", "Common")
+        <div id="mainContainer" class="container-fluid">
+
+            <section class="row-fluid">
+                <div class="span12">
+                    <div class="modal hide" id="myRepairApptModal" data-backdrop="static">
+                        @Html.Action("RepairAppt", "Products")
+                    </div>
+                    @Html.Partial("_Notifications")
+                    @RenderBody()
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+            </section>
+
+            <div id="contentPush"></div>
+            @Html.Action("Footer", "Common")
+        </div>
+    </div>
+</body>
+</html>

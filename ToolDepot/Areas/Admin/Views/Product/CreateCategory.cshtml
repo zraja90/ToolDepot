@@ -1,0 +1,38 @@
+﻿@model ToolDepot.Areas.Admin.Models.Products.CreateCategoryModel
+
+@{
+    ViewBag.Title = "Create New Category";
+}
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Create Category</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CategoryName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CategoryName)
+            @Html.ValidationMessageFor(model => model.CategoryName)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CategoryImage)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CategoryImage)
+            @Html.ValidationMessageFor(model => model.CategoryImage)
+        </div>
+        <label class="checkbox">
+            @Html.CheckBoxFor(model => model.IsFeatured) @Html.LabelFor(model => model.IsFeatured)
+            @Html.ValidationMessageFor(model => model.IsFeatured)
+        </label>
+
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

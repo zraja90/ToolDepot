@@ -1,0 +1,32 @@
+﻿@model ToolDepot.Areas.Admin.Models.Products.ViewReviewModel
+
+@{
+    ViewBag.Title = "ViewSingleReview";
+}
+
+<h2>ViewSingleReview</h2>
+
+
+        using (Html.BeginForm())
+        {
+@Html.HiddenFor(x => x.Reviews.Id)
+<td>
+    @item.UserName
+</td>
+<td>
+    @item.EmailAddress
+</td>
+<td>
+    @item.Location
+</td>
+<td>
+    @item.Rating
+</td>
+<td>
+    @item.Recommend
+</td>
+<td>
+    <input type="submit" value="Approve" class="btn btn-link" />
+</td>
+}
+    }

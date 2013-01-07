@@ -1,0 +1,66 @@
+﻿@model ToolDepot.Models.Common.HeaderModel
+
+<header id="topNavHeader">
+    <div class="brand container">
+        <div class="pull-left  margin-right">
+            <a href="@Url.Action("Index", "Home")" class="brand">
+                <img src="/content/images/logo.png" class="logo" alt="logo" />
+            </a>
+        </div>
+        <div class="pull-left">
+            <img src="/Content/images/crane.png" class="crane-pic" />
+            <img src="/Content/images/bulldozer.png" class="margin-right-5" />
+            <img src="/Content/images/pickuplift.png" />
+        </div>
+        <ul class="pull-right">
+            <li>
+                <strong><span class="white">For inquiries please contact us at:</span></strong>
+                <ul class="unstyled align-right contact-info">
+                    <li>718-786-1500/1505</li>
+                    <li>43-77 9th St, LIC NY 11101</li>
+                    <li>Open Monday Thru Saturday</li>
+                </ul>
+            </li>
+            <li class="hide">
+                @if (Model.IsLoggedIn)
+                {
+                    using (Html.BeginForm("LogOff", "Customer", new { area = "", controller = "Customer" }, FormMethod.Post, new { id = "logoutForm" }))
+                    {
+                    <a href="javascript:document.getElementById('logoutForm').submit()" class="white">Log off</a>
+                    <a href="/Admin/Product">Admin</a>
+                    }
+                }
+                else
+                {
+                    @Html.ActionLink("Log In","Login","Customer")
+                }
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+</header>
+<nav>
+    <div class="main-nav">
+        <ul class="unstyled horizontal-list">
+            <li class="current">
+                <a href="/">Home</a>
+            </li>
+            <li>
+                @Html.ActionLink("Products","AllCategories","Products")
+            </li>
+            <li>
+                @Html.ActionLink("Repair Service","RepairServices","Products")
+            </li>
+            <li>
+                @Html.ActionLink("Weekly Ad","Featured","Products")
+            </li>
+            <li>
+                @Html.ActionLink("Request A Quote","RequestAQuote","Products")
+            </li>
+            <li>
+                @Html.ActionLink("Contact Us","Contact","Home",null,new {Area=""})
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+</nav>

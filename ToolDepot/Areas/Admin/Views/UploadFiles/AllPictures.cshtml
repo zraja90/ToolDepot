@@ -1,0 +1,20 @@
+﻿@model List<ToolDepot.Areas.Admin.Models.UploadImages.UploadImageModel>
+
+<table class="table table-striped">
+    <tr>
+        
+        <th>Image</th>
+        <th>Image Name</th>
+        <th>Image Size</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img src="/Content/images/Products/@item.Name" style="height: 50px;"/>
+            </td>
+            <td>@item.Name</td>
+            <td>@item.FileSize</td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,88 @@
+﻿@model ToolDepot.Areas.Admin.Models.Products.ApproveReviewModel
+
+@{
+    ViewBag.Title = "ApproveReviews";
+}
+
+<h2>Approve Reviews</h2>
+
+<h3>Reviews Not Approved</h3>
+<table class="table table-striped">
+    <tr>
+        <th>User Name</th>
+        <th>Email Address</th>
+        <th>Location</th>
+        <th>Rating</th>
+        <th>Recommend</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var item in Model.Reviews.SkipWhile(x => x.IsApproved))
+    {
+        using (Html.BeginForm())
+        {
+        <tr>
+            @Html.HiddenFor(x => item.Id)
+            <td>
+                @item.UserName
+            </td>
+            <td>
+                @item.EmailAddress
+            </td>
+            <td>
+                @item.Location
+            </td>
+            <td>
+                @item.Rating
+            </td>
+            <td>
+                @item.Recommend
+            </td>
+            <td>
+                <input type="submit" value="Approve" class="btn btn-link" />
+            </td>
+        </tr>
+        }
+    }
+
+</table>
+<h3>Approved Reviews</h3>
+<table class="table table-striped">
+    <tr>
+        <th>User Name</th>
+        <th>Email Address</th>
+        <th>Location</th>
+        <th>Rating</th>
+        <th>ReviewTitle</th>
+        <th>Review</th>
+        <th>Recommend</th>
+
+    </tr>
+    @foreach (var item in Model.Reviews.SkipWhile(x => !x.IsApproved))
+    {
+        <tr>
+            <td>
+                @item.UserName
+            </td>
+            <td>
+                @item.EmailAddress
+            </td>
+            <td>
+                @item.Location
+            </td>
+            <td>
+                @item.Rating
+            </td>
+            <td>
+                @item.ReviewTitle
+            </td>
+            <td>
+                @item.Review
+            </td>
+            <td>
+                @item.Recommend
+            </td>
+
+        </tr>
+    }
+
+</table>
