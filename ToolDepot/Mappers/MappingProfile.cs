@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using ToolDepot.Areas.Admin.Controllers;
 using ToolDepot.Areas.Admin.Models.Products;
 using ToolDepot.Core.Domain.Customers;
 using ToolDepot.Core.Domain.Products;
@@ -40,6 +41,9 @@ namespace ToolDepot.Mappers
 
             Mapper.CreateMap<EditProductModel, ProductSpecs>();
             Mapper.CreateMap<ProductSpecs, EditProductModel>();
+
+            Mapper.CreateMap<EditBrochureModel, Brochure>();
+            Mapper.CreateMap<Brochure, EditBrochureModel>();
 
         }
     }

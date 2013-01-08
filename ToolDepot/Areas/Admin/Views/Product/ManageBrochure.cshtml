@@ -1,43 +1,31 @@
-﻿@model ToolDepot.Models.Products.BrochureModel
+﻿@using ToolDepot.Helpers
+@model ToolDepot.Models.Products.BrochureModel
 
 @{
     ViewBag.Title = "Manage";
 }
-
+<script>
+    $(function () {
+        $("#sortable").sortable();
+        $("#sortable").disableSelection();
+    });
+</script>
 <h2 class="pull-left">Manage</h2>
 <div class="pull-right">
-    @Html.ActionLink("Upload Images", "Index","UploadFiles")
-</div>'<div class="clearfix"></div>
-@Html.ActionLink("Back to Home","Index","Home",null,new {Area="Admin"})
-<div class="ProductList">
-    <ul class="unstyled">
-        @foreach (var item in Model.Brochures)
-        {
-            <li class="pull-left">
-                <div class="product">
-                    <img src="/Content/images/Products/@item.ProductImage" class="product-image" />
-                    <div class="title">
-                        @Html.TextBoxFor(x=>item.ProductImage, new {Class="input-mini"})
-                        @Html.TextBoxFor(x=>item.Ordinal, new {Class="input-mini"})
-                        @Html.TextBoxFor(x=>item.ProductName, new {Class="input-small"})
-                    </div>
-                    <p>
-                        @Html.TextBoxFor(x=>item.ProductDescription, new {Class="input-small"})
-                    </p>
-                </div>
-            </li>
-        }
-    </ul>
-    <div class="clearfix"></div>
+    @Html.ActionLink("Upload Images", "Index", "UploadFiles")
 </div>
+'<div class="clearfix"></div>
+@Html.ActionLink("Back to Home", "Index", "Home", null, new { Area = "Admin" })
 
-@*<table class="table table-striped">
+
+<table class="table table-striped">
     <tr>
         <th>#</th>
         <th>Name</th>
         <th>Description</th>
         <th>IsActive</th>
         <th>Image</th>
+        <th>Action</th>
     </tr>
     @foreach (var item in Model.Brochures)
     {
@@ -47,9 +35,15 @@
             <td>@item.ProductDescription</td>
             <td>@item.IsActive</td>
             <td>@item.ProductImage</td>
-            @Html.HiddenFor(x=>item.Id)
-
+            <td>
+                <a href="#productModal-@item.Id" data-toggle="modal">Edit
+                </a>
+                <div class="hide modal fade" id="productModal-@item.Id">
+                    @Html.Partial("EditBrochure",item)
+                </div>
+            </td>
+            @Html.HiddenFor(x => item.Id)
         </tr>
     }
-</table>*@
+</table>
 

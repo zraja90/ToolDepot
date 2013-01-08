@@ -1,0 +1,43 @@
+﻿@model ToolDepot.Core.Domain.Products.Brochure
+
+@using (Html.BeginForm("EditBrochure","Product",FormMethod.Post))
+{
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>@Model.ProductName</h3>
+    </div>
+    <div class="modal-body">
+        <img src="/Content/images/Products/@Model.ProductImage" class="product-image margin-bottom-10" />
+        <div class="form-horizontal">
+            <div class="control-group">
+                @Html.HiddenFor(x=>x.Id)
+                @Html.LabelFor(x => x.Ordinal, new { Class = "control-label" })
+                <div class="controls">
+                    @Html.TextBoxFor(x => x.Ordinal, new { type = "number" })
+                </div>
+            </div>
+            <div class="control-group">
+                @Html.LabelFor(x => x.ProductName, new { Class = "control-label" })
+                <div class="controls">
+                    @Html.TextBoxFor(x => x.ProductName)
+                </div>
+            </div>
+            <div class="control-group">
+                @Html.LabelFor(x => x.ProductImage, new { Class = "control-label" })
+                <div class="controls">
+                    @Html.TextBoxFor(x => x.ProductImage)
+                </div>
+            </div>
+            <div class="control-group">
+                @Html.LabelFor(x => x.ProductDescription, new { Class = "control-label" })
+                <div class="controls">
+                    @Html.TextAreaFor(x => x.ProductDescription, new { Class = "contactbox" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <input class="btn btn-primary" type="submit" value="Save changes" />
+    </div>
+}

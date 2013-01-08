@@ -123,7 +123,7 @@ namespace ToolDepot.Controllers
         {
             var model = new BrochureModel
                             {
-                                Brochures = _brochureService.GetAll().ToList()
+                                Brochures = _brochureService.GetAll().OrderBy(x=>x.Ordinal).ToList()
                             };
             return View(model);
         }

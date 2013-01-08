@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -8,6 +9,7 @@ using ToolDepot.Areas.Admin.Models.Products;
 using ToolDepot.Areas.Admin.Models.UploadImages;
 using ToolDepot.Core.Domain.Products;
 using ToolDepot.Filters;
+using ToolDepot.Filters.Helpers;
 using ToolDepot.Helpers;
 using ToolDepot.Mappers;
 using ToolDepot.Models.Products;
@@ -202,12 +204,17 @@ namespace ToolDepot.Areas.Admin.Controllers
         {
             var model = new BrochureModel
                             {
-                                Brochures = _brochureService.GetAll().ToList(),
-                                Photo = new UploadImageModel()
+                                Brochures = _brochureService.GetAll().OrderBy(x=>x.Ordinal)
                             };
             return View(model);
         }
-
+        [HttpPost]
+        public ActionResult EditBrochure(Brochure model)
+        {
+            _brochureService.AddOrUpdate(model);
+            this.SuccessNotification("Updated");
+            return RedirectToAction("ManageBrochure");
+        }
         public ActionResult ApproveReviews()
         {
             var model = new ApproveReviewModel { Reviews = _reviewService.GetAll().ToList() };

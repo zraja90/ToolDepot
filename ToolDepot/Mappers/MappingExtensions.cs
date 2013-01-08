@@ -141,6 +141,22 @@ namespace ToolDepot.Mappers
             return Mapper.Map(model, destination);
         }
 
+
+        public static EditBrochureModel ToModel(this Brochure entity)
+        {
+            return Mapper.Map<Brochure, EditBrochureModel>(entity);
+        }
+
+        public static Brochure ToEntity(this EditBrochureModel model)
+        {
+            return Mapper.Map<EditBrochureModel, Brochure>(model);
+        }
+
+        public static Brochure ToEntity(this EditBrochureModel model, Brochure destination)
+        {
+            return Mapper.Map(model, destination);
+        }
+
         #endregion
     }
 }

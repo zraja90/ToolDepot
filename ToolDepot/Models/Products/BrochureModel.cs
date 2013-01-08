@@ -10,7 +10,7 @@ namespace ToolDepot.Models.Products
 {
     public class BrochureModel
     {
-        public List<Brochure> Brochures { get; set; }
-        public UploadImageModel Photo { get; set; }
+        public IEnumerable<Brochure> Brochures { get; set; }
+        
     }
 }

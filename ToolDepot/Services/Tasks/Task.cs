@@ -85,7 +85,7 @@ namespace ToolDepot.Services.Tasks
         public void Execute()
         {
             this.IsRunning = true;
-            using (var timerScope = AutofacDependencyResolver.Current.ApplicationContainer.BeginLifetimeScope("AutofacWebRequest"))
+            using (var timerScope = AutofacDependencyResolver.Current.ApplicationContainer.BeginLifetimeScope("httpRequest"))
             {
                 //var scheduleTaskService = DependencyResolver.Current.GetService<IScheduleTaskService>();
                 var scheduleTaskService = timerScope.Resolve<IScheduleTaskService>();

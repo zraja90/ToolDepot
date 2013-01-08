@@ -71,7 +71,7 @@ namespace ToolDepot.App_Start
             builder.RegisterGeneric(typeof(EfRepository<>)).As(typeof(IRepository<>)).InstancePerHttpRequest();
             builder.RegisterType<WebHelper>().As<IWebHelper>().InstancePerHttpRequest();
             builder.RegisterType<WorkContext>().As<IWorkContext>().InstancePerHttpRequest();
-            
+
             builder.RegisterType<EmailSender>().As<IEmailSender>().InstancePerHttpRequest();
             builder.RegisterType<Tokenizer>().As<ITokenizer>().InstancePerHttpRequest();
             builder.RegisterType<DefaultLogger>().As<ILogger>().InstancePerHttpRequest();
