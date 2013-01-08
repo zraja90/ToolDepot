@@ -5,84 +5,86 @@
 }
 
 <h2>Approve Reviews</h2>
+<ul class="nav nav-tabs">
+    <li class="active">
+        <a href="#pending" data-toggle="tab">Pending</a>
+    </li>
+    <li>
+        <a href="#approved" data-toggle="tab">Approved</a>
+    </li>
+</ul>
 
-<h3>Reviews Not Approved</h3>
-<table class="table table-striped">
-    <tr>
-        <th>User Name</th>
-        <th>Email Address</th>
-        <th>Location</th>
-        <th>Rating</th>
-        <th>Recommend</th>
-        <th>Actions</th>
-    </tr>
-    @foreach (var item in Model.Reviews.SkipWhile(x => x.IsApproved))
-    {
-        using (Html.BeginForm())
-        {
-        <tr>
-            @Html.HiddenFor(x => item.Id)
-            <td>
-                @item.UserName
-            </td>
-            <td>
-                @item.EmailAddress
-            </td>
-            <td>
-                @item.Location
-            </td>
-            <td>
-                @item.Rating
-            </td>
-            <td>
-                @item.Recommend
-            </td>
-            <td>
-                <input type="submit" value="Approve" class="btn btn-link" />
-            </td>
-        </tr>
-        }
-    }
 
-</table>
-<h3>Approved Reviews</h3>
-<table class="table table-striped">
-    <tr>
-        <th>User Name</th>
-        <th>Email Address</th>
-        <th>Location</th>
-        <th>Rating</th>
-        <th>ReviewTitle</th>
-        <th>Review</th>
-        <th>Recommend</th>
+<div class="tab-content">
+    <div class="tab-pane active" id="pending">
+        <table class="table table-striped">
+            <tr>
+                <th>User Name</th>
+                <th>Email Address</th>
+                <th>Location</th>
+                <th>Created Date</th>
+                <th>Actions</th>
+            </tr>
+            @foreach (var item in Model.Reviews.SkipWhile(x => x.IsApproved))
+            {
+                using (Html.BeginForm())
+                {
+                <tr>
+                    @Html.HiddenFor(x => item.Id)
+                    <td>
+                        @item.UserName
+                    </td>
+                    <td>
+                        @item.EmailAddress
+                    </td>
+                    <td>
+                        @item.Location
+                    </td>
+                    <td>
+                        @item.CreatedDate
+                    </td>
+                    <td>
+                        View
+                    </td>
+                </tr>
+                }
+            }
 
-    </tr>
-    @foreach (var item in Model.Reviews.SkipWhile(x => !x.IsApproved))
-    {
-        <tr>
-            <td>
-                @item.UserName
-            </td>
-            <td>
-                @item.EmailAddress
-            </td>
-            <td>
-                @item.Location
-            </td>
-            <td>
-                @item.Rating
-            </td>
-            <td>
-                @item.ReviewTitle
-            </td>
-            <td>
-                @item.Review
-            </td>
-            <td>
-                @item.Recommend
-            </td>
+        </table>
+    </div>
+    <div class="tab-pane" id="approved">
+        <table class="table table-striped">
+            <tr>
+                <th>User Name</th>
+                <th>Email Address</th>
+                <th>Location</th>
+                <th>Created Date</th>
+                <th>Actions</th>
+                
+            </tr>
+            @foreach (var item in Model.Reviews.SkipWhile(x => !x.IsApproved))
+            {
+                <tr>
+                    <td>
+                        @item.UserName
+                    </td>
+                    <td>
+                        @item.EmailAddress
+                    </td>
+                    <td>
+                        @item.Location
+                    </td>
+                    <td>
+                        @item.CreatedDate
+                    </td>
+                    <td>
+                        View
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
 
-        </tr>
-    }
 
-</table>
+
