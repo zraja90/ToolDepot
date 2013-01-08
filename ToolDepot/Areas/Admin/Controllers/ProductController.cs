@@ -23,7 +23,7 @@ namespace ToolDepot.Areas.Admin.Controllers
         // GET: /Admin/Product/
         private readonly IProductCategoryService _productCategoryService;
         private readonly IProductService _productService;
-        private readonly IProductSpecsService _productSpecsService;
+        private IProductSpecsService _productSpecsService;
         private readonly IProductFeaturesService _productFeaturesService;
         private readonly IBrochureService _brochureService;
         private readonly IProductReviewService _reviewService;
@@ -135,63 +135,27 @@ namespace ToolDepot.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult EditSpecs(EditProductModel model)
         {
-            var specs = _productSpecsService.GetMany(x => x.ProductId == model.Id).ToList();
-            if (specs.Any())
+            int productId = model.Id;
+            foreach(var product in model.ProductSpecs)
             {
-                for (int i = 0; i < model.ProductSpecs.Count; i++)
-                {
-                    if (specs[i] != null)
-                    {
-                        if (specs[i].Id == model.ProductSpecs[i].Id)
-                        {
-                            specs[i].SpecType = model.ProductSpecs[i].SpecType;
-                            specs[i].SpecName = model.ProductSpecs[i].SpecName;
-                            _productSpecsService.Update(specs[i]);
-                        }
-                    }
-                    else
-                    {
-                        _productSpecsService.Add(model.ProductSpecs[i]);
-                    }
-                }
+                if (product.ProductId == 0)
+                    product.ProductId = productId;
+                _productSpecsService.AddOrUpdate(product);
             }
-            else
-            {
-                foreach (var spec in model.ProductSpecs)
-                {
-                    if (!string.IsNullOrEmpty(spec.SpecName))
-                    {
-                        spec.ProductId = model.Id;
-                        _productSpecsService.Add(spec);
-                    }
-                }
-            }
+
             return RedirectToAction("Edit", "Product", new { id = model.Id });
         }
         [HttpPost]
         public ActionResult EditFeatured(EditProductModel model)
         {
-            var features = _productFeaturesService.GetMany(x => x.ProductId == model.Id).ToList();
-            if (features.Any())
+            int productId = model.Id;
+            foreach (var feature in model.ProductFeatures)
             {
-                foreach (var feature in features)
-                {
-                    _productFeaturesService.Delete(feature);
-                }
-                foreach (var feature in model.ProductFeatures)
-                {
-                    if (feature.ProductId == 0) feature.ProductId = model.Id;
-                    _productFeaturesService.Add(feature);
-                }
+                if (feature.ProductId == 0)
+                    feature.ProductId = productId;
+                _productFeaturesService.AddOrUpdate(feature);
             }
-            else
-            {
-                foreach (var feature in model.ProductFeatures)
-                {
-                    feature.ProductId = model.Id;
-                    _productFeaturesService.Add(feature);
-                }
-            }
+
             return RedirectToAction("Edit", "Product", new { id = model.Id });
         }
         #endregion

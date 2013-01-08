@@ -17,7 +17,7 @@ namespace ToolDepot.Services.Products
         public SelectList GetAllProductsSelectList(string selectedValue = null, string extraItem = null)
         {
             var list = GetAll().OrderBy(x => x.Name).ToList();
-
+            
             if (!string.IsNullOrEmpty(extraItem))
             {
                 var productField = new Product

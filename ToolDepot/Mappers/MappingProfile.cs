@@ -37,7 +37,10 @@ namespace ToolDepot.Mappers
 
             Mapper.CreateMap<ProductReviews, ProductReviewModel>();
             Mapper.CreateMap<ProductReviewModel, ProductReviews>();
-            
+
+            Mapper.CreateMap<EditProductModel, ProductSpecs>();
+            Mapper.CreateMap<ProductSpecs, EditProductModel>();
+
         }
     }
 }

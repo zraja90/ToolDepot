@@ -125,6 +125,22 @@ namespace ToolDepot.Mappers
             return Mapper.Map(model, destination);
         }
 
+
+        public static EditProductModel ToModel(this ProductSpecs entity)
+        {
+            return Mapper.Map<ProductSpecs, EditProductModel>(entity);
+        }
+
+        public static ProductSpecs ToEntity(this EditProductModel model)
+        {
+            return Mapper.Map<EditProductModel, ProductSpecs>(model);
+        }
+
+        public static ProductSpecs ToEntity(this EditProductModel model, ProductSpecs destination)
+        {
+            return Mapper.Map(model, destination);
+        }
+
         #endregion
     }
 }

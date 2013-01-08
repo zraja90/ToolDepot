@@ -28,7 +28,7 @@ namespace ToolDepot
             AutofacConfig.RegisterAutofac();
             AutoMapperConfig.Configure();
 
-            
+
             TaskManager.Instance.Initialize();
             TaskManager.Instance.Start();
         }

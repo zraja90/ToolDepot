@@ -6,10 +6,10 @@
 
 <h2>Details</h2>
 
-<p>
+<div>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Product.Id }) |
     @Html.ActionLink("Back to List", "Index")
-</p>
+</div>
 
 <table class="table table-striped">
     <tr>
@@ -53,8 +53,7 @@
         </td>
     </tr>
     <tr>
-        <td>
-            Features
+        <td>Features
         </td>
         <td>
             @if (Model.Product.ProductFeatures.Any())
@@ -71,20 +70,24 @@
         </td>
     </tr>
     <tr>
-        <td>
-            Specs
+        <td>Specs
         </td>
         <td>
             @if (Model.Product.ProductSpecs.Any())
             {
-                <ul>
+                <table>
                     @foreach (var specs in Model.Product.ProductSpecs)
                     {
-                        <li>
-                            @specs.Specs
-                        </li>
+                        <tr>
+                            <td>
+                                @specs.SpecType
+                            </td>
+                            <td>
+                                @specs.SpecName
+                            </td>
+                        </tr>
                     }
-                </ul>
+                </table>
             }
         </td>
     </tr>

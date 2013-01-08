@@ -61,5 +61,12 @@ namespace ToolDepot.Services
                 throw new ArgumentNullException(typeof(T).ToString());
             repo.Delete(entity);
         }
+        public virtual void AddOrUpdate(T entity)
+        {
+            if(entity == null)
+                throw new ArgumentNullException(typeof(T).ToString());
+            repo.AddOrUpdate(entity);
+        }
+
     }
 }

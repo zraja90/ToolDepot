@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4D161E9D-AADC-4728-A873-0C0FA767BC1E}</ProjectGuid>
+    <ProjectGuid>{2710AB4B-71A6-493E-BFBA-77FA9E3E0E19}</ProjectGuid>
     <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -39,58 +39,45 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Antlr3.Runtime, Version=3.3.1.7705, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Autofac, Version=2.6.3.862, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Autofac">
       <HintPath>..\packages\Autofac.2.6.3.862\lib\NET40\Autofac.dll</HintPath>
     </Reference>
-    <Reference Include="Autofac.Configuration">
+    <Reference Include="Autofac.Configuration, Version=2.6.3.862, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Autofac.2.6.3.862\lib\NET40\Autofac.Configuration.dll</HintPath>
     </Reference>
-    <Reference Include="Autofac.Integration.Mvc">
-      <HintPath>..\packages\Autofac.Mvc4.2.6.2.859\lib\NET40\Autofac.Integration.Mvc.dll</HintPath>
+    <Reference Include="Autofac.Integration.Mvc, Version=2.6.2.859, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Autofac.Integration.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="AutoMapper">
-      <HintPath>..\packages\AutoMapper.2.2.0\lib\net40\AutoMapper.dll</HintPath>
+    <Reference Include="AutoMapper, Version=2.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AutoMapper.dll</HintPath>
     </Reference>
-    <Reference Include="ClientDependency.Core">
-      <HintPath>..\packages\ClientDependency.1.5.1.0\lib\ClientDependency.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="ClientDependency.Core.Mvc">
-      <HintPath>..\packages\ClientDependency-Mvc.1.5.1.0\lib\ClientDependency.Core.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="dotless.Core">
+    <Reference Include="dotless.Core, Version=1.3.1.0, Culture=neutral, PublicKeyToken=96b446c9e63eae34, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\dotless.1.3.1.0\lib\dotless.Core.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="PagedList">
-      <HintPath>..\packages\PagedList.1.15.0.0\lib\net40\PagedList.dll</HintPath>
+    <Reference Include="PagedList, Version=1.15.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\PagedList.dll</HintPath>
     </Reference>
     <Reference Include="PagedList.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\PagedList.Mvc.4.0.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <HintPath>bin\PagedList.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -101,6 +88,9 @@
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
@@ -132,6 +122,10 @@
     <Reference Include="System.Web.Optimization">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
@@ -143,10 +137,6 @@
     <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="WebGrease, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
     </Reference>
     <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -184,6 +174,14 @@
       <Private>True</Private>
       <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
     </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\AuthConfig.cs" />
@@ -196,6 +194,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UploadFilesController.cs" />
     <Compile Include="Areas\Admin\Models\AllProductsListModel.cs" />
     <Compile Include="Areas\Admin\Models\Products\ApproveReviewModel.cs" />
     <Compile Include="Areas\Admin\Models\Products\BrochureModel\ManageBrochureModel.cs" />
@@ -210,34 +209,38 @@
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
-    <Compile Include="Areas\Admin\Controllers\UploadFilesController.cs" />
     <Compile Include="Core\AppException.cs" />
     <Compile Include="Core\BaseEntity.cs" />
     <Compile Include="Core\CommonHelper.cs" />
-    <Compile Include="Core\Domain\Customers\ContactUs.cs" />
     <Compile Include="Core\Common\CookieHelper.cs" />
     <Compile Include="Core\Common\EncryptionHelper.cs" />
     <Compile Include="Core\Common\Md5Encrypt.cs" />
     <Compile Include="Core\Common\ValidationResult.cs" />
+    <Compile Include="Core\Domain\Customers\ContactUs.cs" />
     <Compile Include="Core\Domain\Customers\Customer.cs" />
     <Compile Include="Core\Domain\Customers\CustomerRole.cs" />
     <Compile Include="Core\Domain\Customers\EmailSubscription.cs" />
     <Compile Include="Core\Domain\Customers\SystemCustomerRoleNames.cs" />
     <Compile Include="Core\Domain\Email\EmailAccount.cs" />
     <Compile Include="Core\Domain\Email\EmailTemplates.cs" />
-    <Compile Include="Core\Domain\Email\QueuedEmail.cs" />
     <Compile Include="Core\Domain\Email\EnumEmailNames.cs" />
+    <Compile Include="Core\Domain\Email\QueuedEmail.cs" />
     <Compile Include="Core\Domain\Logging\Log.cs" />
     <Compile Include="Core\Domain\Logging\LogLevel.cs" />
     <Compile Include="Core\Domain\Products\Brochure.cs" />
+    <Compile Include="Core\Domain\Products\Product.cs" />
+    <Compile Include="Core\Domain\Products\ProductCategory.cs" />
     <Compile Include="Core\Domain\Products\ProductFeatures.cs" />
     <Compile Include="Core\Domain\Products\ProductPrices.cs" />
     <Compile Include="Core\Domain\Products\ProductReviews.cs" />
     <Compile Include="Core\Domain\Products\ProductSeo.cs" />
+    <Compile Include="Core\Domain\Products\ProductSpecs.cs" />
     <Compile Include="Core\Domain\Products\RepairAppt.cs" />
+    <Compile Include="Core\Domain\Products\RequestAQuote.cs" />
     <Compile Include="Core\Domain\Security\DefaultPermissionRecord.cs" />
     <Compile Include="Core\Domain\Security\PermissionRecord.cs" />
     <Compile Include="Core\Domain\Tasks\ScheduleTask.cs" />
+    <Compile Include="Core\Domain\UnderConstruction.cs" />
     <Compile Include="Core\Fakes\Extensions.cs" />
     <Compile Include="Core\Fakes\FakeHttpContext.cs" />
     <Compile Include="Core\Fakes\FakeHttpRequest.cs" />
@@ -249,6 +252,7 @@
     <Compile Include="Core\IWebHelper.cs" />
     <Compile Include="Core\IWorkContext.cs" />
     <Compile Include="Core\WebHelper.cs" />
+    <Compile Include="Data\AppContext.cs" />
     <Compile Include="Data\EfRepository.cs" />
     <Compile Include="Data\IDbContext.cs" />
     <Compile Include="Data\IRepository.cs" />
@@ -271,7 +275,6 @@
     <Compile Include="Data\Mapping\Security\PermissionRecordMap.cs" />
     <Compile Include="Data\Mapping\Tasks\ScheduleTaskMap.cs" />
     <Compile Include="Data\SqlWrap.cs" />
-    <Compile Include="Core\Domain\Products\ProductSpecs.cs" />
     <Compile Include="Filters\AdminAuthorizeAttribute.cs" />
     <Compile Include="Filters\Helpers\ImportedFilePathResolver.cs" />
     <Compile Include="Filters\Helpers\LessMinify.cs" />
@@ -360,23 +363,19 @@
     <Compile Include="Models\FeaturedCategoriesModel.cs" />
     <Compile Include="Models\FeaturedProductModel.cs" />
     <Compile Include="Models\NotifyType.cs" />
-    <Compile Include="Core\Domain\Products\ProductCategory.cs" />
-    <Compile Include="Core\Domain\Products\Product.cs" />
     <Compile Include="Models\Products\BrochureModel.cs" />
     <Compile Include="Models\Products\CategoriesModel.cs" />
     <Compile Include="Models\Products\CategoryWithProductsModel.cs" />
     <Compile Include="Models\Products\ProductModel.cs" />
     <Compile Include="Models\Products\ProductReviewModel.cs" />
     <Compile Include="Models\Products\ProductWithCategoryModel.cs" />
-    <Compile Include="Core\Domain\UnderConstruction.cs" />
     <Compile Include="Models\Products\RepairApptModel.cs" />
     <Compile Include="Models\Products\RequestQuoteModel.cs" />
     <Compile Include="Models\Products\UnderConstructionModel.cs" />
-    <Compile Include="Data\AppContext.cs" />
-    <Compile Include="Core\Domain\Products\RequestAQuote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Authentication\FormsAuthenticationService.cs" />
     <Compile Include="Services\Authentication\IAuthenticationService.cs" />
+    <Compile Include="Services\CrudService.cs" />
     <Compile Include="Services\CustomerService\ContactUsService.cs" />
     <Compile Include="Services\CustomerService\CustomerRegistrationService.cs" />
     <Compile Include="Services\CustomerService\CustomerService.cs" />
@@ -387,13 +386,13 @@
     <Compile Include="Services\CustomerService\IEmailSubscriptionService.cs" />
     <Compile Include="Services\Email\EmailAccountService.cs" />
     <Compile Include="Services\Email\EmailSender.cs" />
+    <Compile Include="Services\Email\EmailTemplateService.cs" />
     <Compile Include="Services\Email\IEmailAccountService.cs" />
     <Compile Include="Services\Email\IEmailSender.cs" />
     <Compile Include="Services\Email\IEmailTemplateService.cs" />
     <Compile Include="Services\Email\IQueuedEmailService.cs" />
     <Compile Include="Services\Email\ITokenizer.cs" />
     <Compile Include="Services\Email\IWorkflowMessageService.cs" />
-    <Compile Include="Services\Email\EmailTemplateService.cs" />
     <Compile Include="Services\Email\QueuedEmailService.cs" />
     <Compile Include="Services\Email\QueuedMessagesSendTask.cs" />
     <Compile Include="Services\Email\Token.cs" />
@@ -403,26 +402,25 @@
     <Compile Include="Services\Helpers\DateTimeSettings.cs" />
     <Compile Include="Services\Helpers\IDateTimeHelperService.cs" />
     <Compile Include="Services\Helpers\TimeZoneInfoHelper.cs" />
+    <Compile Include="Services\ICrudService.cs" />
+    <Compile Include="Services\IUnderConstructionService.cs" />
     <Compile Include="Services\Logging\DefaultLogger.cs" />
     <Compile Include="Services\Logging\ILogger.cs" />
     <Compile Include="Services\Logging\LoggingExtensions.cs" />
     <Compile Include="Services\Products\BrochureService.cs" />
-    <Compile Include="Services\CrudService.cs" />
+    <Compile Include="Services\Products\IBrochureService.cs" />
+    <Compile Include="Services\Products\IProductCategoryService.cs" />
     <Compile Include="Services\Products\IProductFeaturesService.cs" />
     <Compile Include="Services\Products\IProductReviewService.cs" />
-    <Compile Include="Services\Products\IRepairApptService.cs" />
-    <Compile Include="Services\Products\ProductFeaturesService.cs" />
-    <Compile Include="Services\Products\IProductSpecsService.cs" />
-    <Compile Include="Services\Products\ProductReviewService.cs" />
-    <Compile Include="Services\Products\ProductSpecsService.cs" />
-    <Compile Include="Services\Products\IBrochureService.cs" />
-    <Compile Include="Services\ICrudService.cs" />
-    <Compile Include="Services\Products\IProductCategoryService.cs" />
     <Compile Include="Services\Products\IProductService.cs" />
+    <Compile Include="Services\Products\IProductSpecsService.cs" />
+    <Compile Include="Services\Products\IRepairApptService.cs" />
     <Compile Include="Services\Products\IRequestQuoteService.cs" />
-    <Compile Include="Services\IUnderConstructionService.cs" />
     <Compile Include="Services\Products\ProductCategoryService.cs" />
+    <Compile Include="Services\Products\ProductFeaturesService.cs" />
+    <Compile Include="Services\Products\ProductReviewService.cs" />
     <Compile Include="Services\Products\ProductService.cs" />
+    <Compile Include="Services\Products\ProductSpecsService.cs" />
     <Compile Include="Services\Products\RepairApptService.cs" />
     <Compile Include="Services\Products\RequestQuoteService.cs" />
     <Compile Include="Services\Security\EncryptionService.cs" />
@@ -451,15 +449,10 @@
     <Content Include="Content\bootstrap\accordion.less" />
     <Content Include="Content\bootstrap\alerts.less" />
     <Content Include="Content\bootstrap\bootstrap-blue.less" />
-    <Content Include="Content\css\images\cancel-off-big.png" />
-    <Content Include="Content\css\images\cancel-on-big.png" />
-    <Content Include="Content\css\images\star-half-big.png" />
-    <Content Include="Content\css\images\star-off-big.png" />
-    <Content Include="Content\css\images\star-on-big.png" />
-    <Content Include="Content\css\jRating.jquery.css" />
-    <Content Include="Content\FileUpload\bootstrap-image-gallery.min.css" />
     <Content Include="Content\bootstrap\bootstrap-red.less" />
+    <Content Include="Content\bootstrap\bootstrap.css" />
     <Content Include="Content\bootstrap\bootstrap.less" />
+    <Content Include="Content\bootstrap\bootstrap.min.css" />
     <Content Include="Content\bootstrap\breadcrumbs.less" />
     <Content Include="Content\bootstrap\button-groups.less" />
     <Content Include="Content\bootstrap\buttons.less" />
@@ -506,29 +499,29 @@
     <Content Include="Content\bootstrap\variables.less" />
     <Content Include="Content\bootstrap\variables.min.css" />
     <Content Include="Content\bootstrap\wells.less" />
+    <Content Include="Content\css\alignment.less" />
+    <Content Include="Content\css\images\cancel-off-big.png" />
+    <Content Include="Content\css\images\cancel-on-big.png" />
     <Content Include="Content\css\images\content-bg.jpg" />
     <Content Include="Content\css\images\glyphicons-halflings-white.png" />
     <Content Include="Content\css\images\glyphicons-halflings.png" />
+    <Content Include="Content\css\images\star-half-big.png" />
+    <Content Include="Content\css\images\star-off-big.png" />
+    <Content Include="Content\css\images\star-on-big.png" />
     <Content Include="Content\css\images\Under_Construction.jpg" />
-    <Content Include="Content\css\site.css">
-      <DependentUpon>site.less</DependentUpon>
-    </Content>
+    <Content Include="Content\css\jRating.jquery.css" />
+    <Content Include="Content\css\site.css" />
     <Content Include="Content\css\site.less" />
-    <Content Include="Content\css\site.min.css">
-      <DependentUpon>site.less</DependentUpon>
-    </Content>
-    <Content Include="Content\images\recommended.png" />
-    <Content Include="Scripts\FileUpload\bootstrap-image-gallery.min.js" />
-    <Content Include="Scripts\FileUpload\canvas-to-blob.min.js" />
-    <Content Include="Scripts\FileUpload\jquery.fileupload-ip.js" />
+    <Content Include="Content\css\site.min.css" />
+    <Content Include="Content\FileUpload\bootstrap-image-gallery.min.css" />
     <Content Include="Content\FileUpload\jquery.fileupload-ui.css" />
-    <Content Include="Scripts\FileUpload\jquery.fileupload-ui.js" />
-    <Content Include="Scripts\FileUpload\jquery.fileupload.js" />
-    <Content Include="Scripts\FileUpload\jquery.iframe-transport.js" />
-    <Content Include="Scripts\FileUpload\load-image.min.js" />
-    <Content Include="Scripts\FileUpload\locale.js" />
-    <Content Include="Scripts\FileUpload\main.js" />
-    <Content Include="Scripts\FileUpload\tmpl.min.js" />
+    <Content Include="Content\images\bulldozer.png" />
+    <Content Include="Content\images\crane.png" />
+    <Content Include="Content\images\Equipment.png" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\pickuplift.png" />
     <Content Include="Content\images\Products\11lbsDemolitionHammer.jpg" />
     <Content Include="Content\images\Products\14inPortableCutoffSaw.jpg" />
     <Content Include="Content\images\Products\14inPowerCutter.jpg" />
@@ -541,6 +534,7 @@
     <Content Include="Content\images\Products\BobCatE35.jpg" />
     <Content Include="Content\images\Products\BobCatS650.jpg" />
     <Content Include="Content\images\Products\BoomLift.jpg" />
+    <Content Include="Content\images\Products\ConcreteStone_95CM_Concrete_Mixer.gif" />
     <Content Include="Content\images\Products\Cones.jpg" />
     <Content Include="Content\images\Products\CoreDrill.jpg" />
     <Content Include="Content\images\Products\CPS_AirCompressor.jpg" />
@@ -561,14 +555,7 @@
     <Content Include="Content\images\Products\ScissorLift.jpg" />
     <Content Include="Content\images\Products\Tarpaulins.jpg" />
     <Content Include="Content\images\Products\WalkBehindSaw.jpg" />
-    <Content Include="Content\images\bulldozer.png" />
-    <Content Include="Content\images\crane.png" />
-    <Content Include="Content\images\Equipment.png" />
-    <Content Include="Content\images\glyphicons-halflings-white.png" />
-    <Content Include="Content\images\glyphicons-halflings.png" />
-    <Content Include="Content\images\logo.png" />
-    <Content Include="Content\images\pickuplift.png" />
-    <Content Include="Content\images\Products\ConcreteStone_95CM_Concrete_Mixer.gif" />
+    <Content Include="Content\images\recommended.png" />
     <Content Include="Content\images\ToolRepair.png" />
     <Content Include="Content\images\Tools.png" />
     <Content Include="Content\PagedList.css" />
@@ -594,15 +581,12 @@
     <Content Include="Content\themes\base\jquery.ui.core.css" />
     <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
     <Content Include="Content\themes\base\jquery.ui.dialog.css" />
-    <Content Include="Content\themes\base\jquery.ui.menu.css" />
     <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
     <Content Include="Content\themes\base\jquery.ui.resizable.css" />
     <Content Include="Content\themes\base\jquery.ui.selectable.css" />
     <Content Include="Content\themes\base\jquery.ui.slider.css" />
-    <Content Include="Content\themes\base\jquery.ui.spinner.css" />
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
-    <Content Include="Content\themes\base\jquery.ui.tooltip.css" />
     <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -623,50 +607,65 @@
     <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.menu.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.spinner.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
-    <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Areas\Admin\Views\Web.config" />
     <Content Include="Areas\Admin\Views\Home\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
-    <Content Include="Areas\Admin\Views\Product\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Product\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Product\CreateCategory.cshtml" />
-    <Content Include="Areas\Admin\Views\Product\EditProduct.cshtml" />
-    <Content Include="Content\css\alignment.less" />
-    <Content Include="Areas\Admin\Views\Product\EditCategory.cshtml" />
-    <Content Include="Areas\Admin\Views\Product\ManageBrochure.cshtml" />
-    <Content Include="Areas\Admin\Views\UploadFiles\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\UploadFiles\AllPictures.cshtml" />
     <Content Include="Areas\Admin\Views\Product\ApproveReviews.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\CreateCategory.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\EditCategory.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\EditProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\ManageBrochure.cshtml" />
     <Content Include="Areas\Admin\Views\Product\ViewSingleReview.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\UploadFiles\AllPictures.cshtml" />
+    <Content Include="Areas\Admin\Views\UploadFiles\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <None Include="Properties\PublishProfiles\tooldepot - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\tooldepot - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\tooldepotinc.com - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\tooldepotinc.com - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Migrations\Scripts\AddBrochureStaticScript.sql" />
     <Content Include="Migrations\Scripts\RequestQuoteEmail.txt" />
+    <Content Include="Properties\PublishProfiles\tooldepot - FTP.pubxml.user" />
+    <Content Include="Properties\PublishProfiles\tooldepot - Web Deploy.pubxml.user" />
+    <Content Include="Properties\PublishProfiles\tooldepotinc.com - FTP.pubxml.user" />
+    <Content Include="Properties\PublishProfiles\tooldepotinc.com - Web Deploy.pubxml.user" />
     <Content Include="robots.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\bootstrap.validation.js" />
+    <Content Include="Scripts\FileUpload\bootstrap-image-gallery.min.js" />
+    <Content Include="Scripts\FileUpload\canvas-to-blob.min.js" />
+    <Content Include="Scripts\FileUpload\jquery.fileupload-ip.js" />
+    <Content Include="Scripts\FileUpload\jquery.fileupload-ui.js" />
+    <Content Include="Scripts\FileUpload\jquery.fileupload.js" />
+    <Content Include="Scripts\FileUpload\jquery.iframe-transport.js" />
+    <Content Include="Scripts\FileUpload\load-image.min.js" />
+    <Content Include="Scripts\FileUpload\locale.js" />
+    <Content Include="Scripts\FileUpload\main.js" />
+    <Content Include="Scripts\FileUpload\tmpl.min.js" />
     <Content Include="Scripts\html5.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <None Include="Scripts\jquery-1.8.3.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.3.js" />
     <Content Include="Scripts\jquery-1.8.3.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
     <Content Include="Scripts\jquery-ui-1.9.2.js" />
     <Content Include="Scripts\jquery-ui-1.9.2.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
@@ -688,6 +687,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Content\Site.css" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
@@ -707,7 +707,7 @@
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
     <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
-    <Content Include="Views\Customer\Login.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
@@ -719,24 +719,25 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Upload\UploadHandler.ashx" />
     <Content Include="Views\Common\Footer.cshtml" />
     <Content Include="Views\Common\Header.cshtml" />
-    <Content Include="Views\Shared\_Notifications.cshtml" />
-    <Content Include="Views\Home\UnderConstruction.cshtml" />
-    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Common\SubscriptionModule.cshtml" />
+    <Content Include="Views\Customer\Login.cshtml" />
     <Content Include="Views\Products\AllCategories.cshtml" />
     <Content Include="Views\Products\Category.cshtml" />
-    <Content Include="Views\Home\ProductCategories.cshtml" />
-    <Content Include="Views\Home\FeaturedProductCategory.cshtml" />
-    <Content Include="Views\Products\Product.cshtml" />
     <Content Include="Views\Products\Featured.cshtml" />
-    <Content Include="Views\Products\RequestAQuote.cshtml" />
-    <Content Include="Views\Home\HomePageSlider.cshtml" />
-    <Content Include="Views\Common\SubscriptionModule.cshtml" />
-    <Content Include="Views\Products\RepairServices.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Products\Product.cshtml" />
     <Content Include="Views\Products\RepairAppt.cshtml" />
-    <Content Include="Upload\UploadHandler.ashx" />
+    <Content Include="Views\Products\RepairServices.cshtml" />
+    <Content Include="Views\Products\RequestAQuote.cshtml" />
     <Content Include="Views\Products\Review.cshtml" />
+    <Content Include="Views\Shared\_Notifications.cshtml" />
+    <Content Include="Views\Home\FeaturedProductCategory.cshtml" />
+    <Content Include="Views\Home\HomePageSlider.cshtml" />
+    <Content Include="Views\Home\ProductCategories.cshtml" />
+    <Content Include="Views\Home\UnderConstruction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -811,9 +812,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>57398</DevelopmentServerPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:65403/</IISUrl>
+          <IISUrl>http://localhost:50945/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

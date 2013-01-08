@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolDepot", "ToolDepot\ToolDepot.csproj", "{4D161E9D-AADC-4728-A873-0C0FA767BC1E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolDepot", "ToolDepot\ToolDepot.csproj", "{2710AB4B-71A6-493E-BFBA-77FA9E3E0E19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4D161E9D-AADC-4728-A873-0C0FA767BC1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4D161E9D-AADC-4728-A873-0C0FA767BC1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4D161E9D-AADC-4728-A873-0C0FA767BC1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4D161E9D-AADC-4728-A873-0C0FA767BC1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2710AB4B-71A6-493E-BFBA-77FA9E3E0E19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2710AB4B-71A6-493E-BFBA-77FA9E3E0E19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2710AB4B-71A6-493E-BFBA-77FA9E3E0E19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2710AB4B-71A6-493E-BFBA-77FA9E3E0E19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -99,7 +99,7 @@
                                     
                                     @Html.EditorFor(x => x.ProductSpecs[i].SpecType)
                                 </td>
-                                <td>
+                                <td colspan="2">
                                     @Html.EditorFor(x => x.ProductSpecs[i].SpecName)
                                 </td>
                             </tr>
@@ -122,9 +122,10 @@
                     {
                         <tr>
                             <td>
+                                
                                 <input name="ProductSpecs[@i].SpecType" type="text"/>
                             </td>
-                            <td>
+                            <td colspan="2">
                                 <input name="ProductSpecs[@i].SpecName" type="text"/>
                             </td>
                         </tr>
@@ -152,6 +153,7 @@
                     {
                         <div class="margin-bottom-10">
                             @Html.HiddenFor(x => x.ProductFeatures[i].ProductId)
+                            @Html.HiddenFor(x => x.ProductFeatures[i].Id)
                             @Html.EditorFor(x => x.ProductFeatures[i].Feature)
                         </div>
                     }
