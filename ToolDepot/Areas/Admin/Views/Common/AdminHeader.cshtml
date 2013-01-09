@@ -1,0 +1,77 @@
+﻿@model ToolDepot.Models.Common.HeaderModel
+<style>
+    
+</style>
+
+<header id="topNavHeader">
+    <div class="brand container">
+        <div class="pull-left admin-header">
+            <ul class="unstyled header-ul">
+                <li>
+                    <a href="/">
+                        <div>
+                            <img src="/Content/images/Products/homepage.png" class="header-image" />
+                            <div>Home</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin">
+                        <div>
+                            <img src="/Content/images/Products/adminhomepage.png" class="header-image" />
+                            <div>Admin Home</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin/Product">
+                        <div>
+                            <img src="/Content/images/Products/productbox.png" class="header-image" />
+                            <div>Manage Products</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin/Product/ManageBrochure">
+                        <div>
+                            <img src="/Content/images/Products/managebrochure.png" class="header-image" />
+                            <div>Manage Products</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin/UploadFiles">
+                        <div>
+                            <img src="/Content/images/Products/uploadfiles.jpg" class="header-image" />
+                            <div>Manage Products</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin/Product/ApproveReviews">
+                        <div>
+                            <img src="/Content/images/Products/approvereviews.png" class="header-image" />
+                            <div>Manage Products</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="hide">
+            @if (Model.IsLoggedIn)
+            {
+                using (Html.BeginForm("LogOff", "Customer", new { area = "", controller = "Customer" }, FormMethod.Post, new { id = "logoutForm" }))
+                {
+                <a href="javascript:document.getElementById('logoutForm').submit()" class="white">Log off</a>
+                <a href="/Admin/Product">Admin</a>
+                }
+            }
+            else
+            {
+                @Html.ActionLink("Log In", "Login", "Customer")
+            }
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+</header>
