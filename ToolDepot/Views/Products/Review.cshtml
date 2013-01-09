@@ -15,6 +15,7 @@
                     <div class="controls">
                         @Html.EditorFor(model => model.UserName)
                         @Html.ValidationMessageFor(model => model.UserName)
+                        <div class="margin-top-5">Do not use your full name. Use letters and numbers only (no spaces or symbols)</div>
                     </div>
                 </div>
                 <div class="control-group">
@@ -22,6 +23,7 @@
                     <div class="controls">
                         @Html.TextBoxFor(model => model.EmailAddress, new { type = "email" })
                         @Html.ValidationMessageFor(model => model.EmailAddress)
+                        <div class="margin-top-5">We will ONLY use your email to notify you in regards to your submission.</div>
                     </div>
                 </div>
                 <div class="control-group">
@@ -50,8 +52,26 @@
                 <div class="control-group">
                     @Html.LabelFor(model => model.Review, new { Class = "control-label" })
                     <div class="controls">
-                        @Html.TextAreaFor(model => model.Review, new { Class = "contactbox" })
-                        @Html.ValidationMessageFor(model => model.Review)
+                        <div >
+                            @Html.TextAreaFor(model => model.Review, new { Class = "contactbox" })
+                            @Html.ValidationMessageFor(model => model.Review)
+                        </div>
+                        <div>
+                            <small>Writing Guidelines</small>
+                            <ul>
+                                <li>
+                                    write about your personal opinion of this product
+                                </li>
+                                <li>
+                                    describe its features and performance
+                                </li>
+                            </ul>
+                            <small>Do Not</small>
+                            <ul>
+                                <li>mention <strong>competitors</strong>, the <strong>price</strong> you paid, <strong>URLs</strong>, or <strong>personally identifiable information</strong> such as your full name</li>
+                            </ul>
+                        </div>
+                        <div class="clearfix"></div>
                     </div>
                 </div>
                 <div class="control-group">
