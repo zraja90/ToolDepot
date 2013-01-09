@@ -138,7 +138,7 @@ namespace ToolDepot.Areas.Admin.Controllers
         public ActionResult EditSpecs(EditProductModel model)
         {
             int productId = model.Id;
-            foreach(var product in model.ProductSpecs)
+            foreach (var product in model.ProductSpecs)
             {
                 if (product.ProductId == 0)
                     product.ProductId = productId;
@@ -204,7 +204,7 @@ namespace ToolDepot.Areas.Admin.Controllers
         {
             var model = new BrochureModel
                             {
-                                Brochures = _brochureService.GetAll().OrderBy(x=>x.Ordinal)
+                                Brochures = _brochureService.GetAll().OrderBy(x => x.Ordinal)
                             };
             return View(model);
         }
@@ -221,25 +221,31 @@ namespace ToolDepot.Areas.Admin.Controllers
             return View(model);
         }
 
-        public ActionResult ViewSingleReview(int id=0)
+        public ActionResult ViewSingleReview(int id = 0)
         {
-            var model = new ViewReviewModel {Reviews = _reviewService.GetById(id)};
+            var model = new ViewReviewModel { Reviews = _reviewService.GetById(id) };
             return View(model);
         }
 
         [HttpPost]
-        public ActionResult ViewSingleReview(ViewReviewModel model)
+        public ActionResult ViewSingleReview(ViewReviewModel model, string command)
         {
             if (ModelState.IsValid)
             {
                 var entity = _reviewService.GetById(model.Reviews.Id);
-                entity.IsApproved = true;
+                var approve = EnumApproveReview.Approved;
+                var approveMessage =entity.UserName +  "'s review Approved";
+                if (command == "Deny")
+                {
+                    approve = EnumApproveReview.Denied;
+                    approveMessage = entity.UserName + "'s review Denied";
+                }
+
+                entity.IsApproved = approve.ToString();
                 _reviewService.Update(entity);
+                this.SuccessNotification(approveMessage);
             }
             return RedirectToAction("ApproveReviews");
         }
-        
     }
-
-
 }

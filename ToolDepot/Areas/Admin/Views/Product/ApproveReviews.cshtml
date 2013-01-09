@@ -1,7 +1,8 @@
-﻿@model ToolDepot.Areas.Admin.Models.Products.ApproveReviewModel
+﻿@using ToolDepot.Core.Domain.Products
+@model ToolDepot.Areas.Admin.Models.Products.ApproveReviewModel
 
 @{
-    ViewBag.Title = "ApproveReviews";
+    ViewBag.Title = "Approve Reviews";
 }
 
 <h2>Approve Reviews</h2>
@@ -11,6 +12,9 @@
     </li>
     <li>
         <a href="#approved" data-toggle="tab">Approved</a>
+    </li>
+    <li>
+        <a href="#denied" data-toggle="tab">Denied</a>
     </li>
 </ul>
 
@@ -23,11 +27,12 @@
                 <th>Email Address</th>
                 <th>Location</th>
                 <th>Created Date</th>
+                <th>Status</th>
                 <th>Actions</th>
             </tr>
-            @foreach (var item in Model.Reviews.SkipWhile(x => x.IsApproved))
+            @foreach (var item in Model.Reviews)
             {
-                using (Html.BeginForm())
+                if (item.IsApproved != EnumApproveReview.Approved.ToString() && item.IsApproved != EnumApproveReview.Denied.ToString())
                 {
                 <tr>
                     @Html.HiddenFor(x => item.Id)
@@ -44,7 +49,10 @@
                         @item.CreatedDate
                     </td>
                     <td>
-                        View
+                        @item.IsApproved
+                    </td>
+                    <td>
+                        @Html.ActionLink("View", "ViewSingleReview",new { id = item.Id })
                     </td>
                 </tr>
                 }
@@ -59,11 +67,53 @@
                 <th>Email Address</th>
                 <th>Location</th>
                 <th>Created Date</th>
+                <th>Status</th>
                 <th>Actions</th>
-                
+
             </tr>
-            @foreach (var item in Model.Reviews.SkipWhile(x => !x.IsApproved))
+            @foreach (var item in Model.Reviews)
             {
+                if (item.IsApproved == EnumApproveReview.Approved.ToString())
+                {
+                    <tr>
+                        <td>
+                            @item.UserName
+                        </td>
+                        <td>
+                            @item.EmailAddress
+                        </td>
+                        <td>
+                            @item.Location
+                        </td>
+                        <td>
+                            @item.CreatedDate
+                        </td>
+                        <td>
+                            @item.IsApproved
+                        </td>
+                        <td>
+                            @Html.ActionLink("View", "ViewSingleReview",new { id = item.Id })
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+    <div class="tab-pane" id="denied">
+        <table class="table table-striped">
+            <tr>
+                <th>User Name</th>
+                <th>Email Address</th>
+                <th>Location</th>
+                <th>Created Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+
+            </tr>
+            @foreach (var item in Model.Reviews)
+            {
+                if (item.IsApproved == EnumApproveReview.Denied.ToString())
+                {
                 <tr>
                     <td>
                         @item.UserName
@@ -78,9 +128,13 @@
                         @item.CreatedDate
                     </td>
                     <td>
-                        View
+                        @item.IsApproved
+                    </td>
+                    <td>
+                        @Html.ActionLink("View", "ViewSingleReview",new { id = item.Id })
                     </td>
                 </tr>
+                }
             }
         </table>
     </div>

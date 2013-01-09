@@ -3,30 +3,64 @@
 @{
     ViewBag.Title = "ViewSingleReview";
 }
-
-<h2>ViewSingleReview</h2>
-
-
-        using (Html.BeginForm())
-        {
-@Html.HiddenFor(x => x.Reviews.Id)
-<td>
-    @item.UserName
-</td>
-<td>
-    @item.EmailAddress
-</td>
-<td>
-    @item.Location
-</td>
-<td>
-    @item.Rating
-</td>
-<td>
-    @item.Recommend
-</td>
-<td>
-    <input type="submit" value="Approve" class="btn btn-link" />
-</td>
-}
+<style>
+    .review-form label {
+        font-weight: bold;
     }
+</style>
+<h2>@Model.Reviews.UserName's Review</h2>
+<div class="margin-bottom">
+    <img src="/Content/images/Products/@Model.Reviews.Product.Image" class="span2 margin-right-10" />
+    <h3>
+        @Model.Reviews.Product.Name
+    </h3>
+    <div class="clearfix"></div>
+</div>
+
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x => x.Reviews.Id)
+    <div class="review-form">
+        <div class="margin-bottom-10">
+            @Html.LabelFor(x => x.Reviews.UserName)
+            @Html.DisplayFor(x => x.Reviews.UserName)
+        </div>
+        <div class="margin-bottom-10">
+            @Html.LabelFor(x => x.Reviews.EmailAddress)
+            @Html.DisplayFor(x => x.Reviews.EmailAddress)
+        </div>
+        <div class="margin-bottom-10">
+            @Html.LabelFor(x => x.Reviews.Location)
+            @Html.DisplayFor(x => x.Reviews.Location)
+        </div>
+        <div class="margin-bottom-10">
+            @Html.LabelFor(x => x.Reviews.Rating)
+            @Html.DisplayFor(x => x.Reviews.Rating)
+        </div>
+        <div class="margin-bottom-10">
+            @Html.LabelFor(x => x.Reviews.ReviewTitle)
+            @Html.DisplayFor(x => x.Reviews.ReviewTitle)
+        </div>
+        <div class="margin-bottom-10">
+            @Html.LabelFor(x => x.Reviews.Review)
+            @Html.DisplayFor(x => x.Reviews.Review)
+        </div>
+        <div class="margin-bottom-10">
+            @Html.LabelFor(x => x.Reviews.Recommend)
+            @Html.DisplayTextFor(x => x.Reviews.Recommend)
+        </div>
+        <div class="margin-bottom-10">
+            @Html.LabelFor(x => x.Reviews.IsApproved)
+            @Html.DisplayTextFor(x => x.Reviews.IsApproved)
+        </div>
+        <div class="margin-bottom-10">
+            @Html.LabelFor(x => x.Reviews.CreatedDate)
+            @Html.DisplayFor(x => x.Reviews.CreatedDate)
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="Approve" name="command" class="btn btn-primary" />
+        <input type="submit" value="Deny" name="command" class="btn btn-primary" />
+    </div>
+}

@@ -1,4 +1,5 @@
-﻿@model ToolDepot.Models.Products.ProductModel
+﻿@using ToolDepot.Core.Domain.Products
+@model ToolDepot.Models.Products.ProductModel
 
 @{
     ViewBag.Title = Model.Product.Name + " | " + Model.Product.Category.CategoryName;
@@ -91,7 +92,7 @@
             
             foreach (var review in Model.Product.ProductReviews)
             {
-                if (review.IsApproved)
+                if (review.IsApproved == EnumApproveReview.Approved.ToString())
                 {
             <div style="border-top: 2px solid #ccc; padding: 10px">
                 <div class="margin-bottom">

@@ -226,6 +226,7 @@
     <Compile Include="Core\Domain\Logging\Log.cs" />
     <Compile Include="Core\Domain\Logging\LogLevel.cs" />
     <Compile Include="Core\Domain\Products\Brochure.cs" />
+    <Compile Include="Core\Domain\Products\EnumApproveReview.cs" />
     <Compile Include="Core\Domain\Products\Product.cs" />
     <Compile Include="Core\Domain\Products\ProductCategory.cs" />
     <Compile Include="Core\Domain\Products\ProductFeatures.cs" />
@@ -352,6 +353,10 @@
     <Compile Include="Migrations\201301032221233_v6.1.cs" />
     <Compile Include="Migrations\201301032221233_v6.1.Designer.cs">
       <DependentUpon>201301032221233_v6.1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201301090401550_6.2.cs" />
+    <Compile Include="Migrations\201301090401550_6.2.Designer.cs">
+      <DependentUpon>201301090401550_6.2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\InitMigrationSeed.cs" />
@@ -791,6 +796,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201301032221233_v6.1.resx">
       <DependentUpon>201301032221233_v6.1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201301090401550_6.2.resx">
+      <DependentUpon>201301090401550_6.2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

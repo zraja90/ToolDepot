@@ -13,7 +13,7 @@ namespace ToolDepot.Models.Products
         public ProductReviewModel()
         {
             CreatedDate = DateTime.UtcNow;
-            IsApproved = false;
+            IsApproved = EnumApproveReview.Pending.ToString();
         }
 
         public int ProductId { get; set; }
@@ -40,7 +40,7 @@ namespace ToolDepot.Models.Products
         [DisplayName("Would you recommend this?")]
         public bool Recommend { get; set; }
 
-        public bool IsApproved { get; set; }
+        public string IsApproved { get; set; }
         public DateTime CreatedDate { get; set; }
 
         

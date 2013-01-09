@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
+using ToolDepot.Core.Domain.Products;
 using ToolDepot.Filters.Helpers;
 using ToolDepot.Helpers;
 using ToolDepot.Mappers;
@@ -94,7 +95,7 @@ namespace ToolDepot.Controllers
             {
                 foreach (var review in model.Product.ProductReviews)
                 {
-                    if (review.IsApproved)
+                    if (review.IsApproved == EnumApproveReview.Approved.ToString())
                     {
                         totalCount++;
                         count += review.Rating;
@@ -114,7 +115,7 @@ namespace ToolDepot.Controllers
             }
             
             model.OverallRecommend = recommendCount;
-            model.OverallRating = count / model.Product.ProductReviews.Count(x => x.IsApproved);;
+            model.OverallRating = count / model.Product.ProductReviews.Count(x => x.IsApproved==EnumApproveReview.Approved.ToString());;
             model.RecommendPercentage = recommendPercentage;
             return View(model);
         }
