@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using AutoMapper;
 using ToolDepot.Areas.Admin.Models.Products;
+using ToolDepot.Areas.Admin.Models.Products.BrochureModel;
 using ToolDepot.Core.Domain.Customers;
 using ToolDepot.Core.Domain.Products;
 using ToolDepot.Models;
@@ -142,21 +143,20 @@ namespace ToolDepot.Mappers
         }
 
 
-        public static EditBrochureModel ToModel(this Brochure entity)
+        public static BrochureItem ToModel(this Brochure entity)
         {
-            return Mapper.Map<Brochure, EditBrochureModel>(entity);
+            return Mapper.Map<Brochure, BrochureItem>(entity);
         }
 
-        public static Brochure ToEntity(this EditBrochureModel model)
+        public static Brochure ToEntity(this BrochureItem model)
         {
-            return Mapper.Map<EditBrochureModel, Brochure>(model);
+            return Mapper.Map<BrochureItem, Brochure>(model);
         }
 
-        public static Brochure ToEntity(this EditBrochureModel model, Brochure destination)
+        public static Brochure ToEntity(this BrochureItem model, Brochure destination)
         {
             return Mapper.Map(model, destination);
         }
-
         #endregion
     }
 }

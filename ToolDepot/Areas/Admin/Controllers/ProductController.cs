@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Web.Helpers;
 using System.Web.Mvc;
+using System.Web.Services;
+using Newtonsoft.Json;
 using ToolDepot.Areas.Admin.Models;
 using ToolDepot.Areas.Admin.Models.Products;
+using ToolDepot.Areas.Admin.Models.Products.BrochureModel;
 using ToolDepot.Areas.Admin.Models.UploadImages;
 using ToolDepot.Core.Domain.Products;
 using ToolDepot.Filters;
@@ -25,7 +29,7 @@ namespace ToolDepot.Areas.Admin.Controllers
         // GET: /Admin/Product/
         private readonly IProductCategoryService _productCategoryService;
         private readonly IProductService _productService;
-        private IProductSpecsService _productSpecsService;
+        private readonly IProductSpecsService _productSpecsService;
         private readonly IProductFeaturesService _productFeaturesService;
         private readonly IBrochureService _brochureService;
         private readonly IProductReviewService _reviewService;
@@ -202,11 +206,38 @@ namespace ToolDepot.Areas.Admin.Controllers
 
         public ActionResult ManageBrochure()
         {
-            var model = new BrochureModel
-                            {
-                                Brochures = _brochureService.GetAll().OrderBy(x => x.Ordinal)
-                            };
+            var model = new ManageBrochureModel();
+            var brochure = _brochureService.GetAll().OrderBy(x => x.Ordinal);
+            model.Brochure = brochure.Select(x => x.ToModel());
+            //ViewBag.json = JsonConvert.SerializeObject(model.Brochure);
             return View(model);
+        }
+
+        //Get Brochure
+        [HttpPost]
+        public JsonResult ManageBrochure(ManageBrochureModel model)
+        {
+            var success = "";
+            try
+            {
+                foreach (var brochureItem in model.Brochure)
+                {
+                    var entity = _brochureService.GetById(brochureItem.Id);
+                    entity.ProductName = brochureItem.ProductName;
+                    entity.ProductDescription = brochureItem.ProductDescription;
+                    entity.ProductImage = brochureItem.ProductImage;
+                    entity.Ordinal = brochureItem.Ordinal;
+                    entity.IsActive = brochureItem.IsActive;
+                    _brochureService.Update(entity);
+                }
+                success = "Brochure Updated";
+            }
+            catch (Exception)
+            {
+                success = "Update Failed";
+            }
+
+            return Json(success);
         }
         [HttpPost]
         public ActionResult EditBrochure(Brochure model)
@@ -234,7 +265,7 @@ namespace ToolDepot.Areas.Admin.Controllers
             {
                 var entity = _reviewService.GetById(model.Reviews.Id);
                 var approve = EnumApproveReview.Approved;
-                var approveMessage =entity.UserName +  "'s review Approved";
+                var approveMessage = entity.UserName + "'s review Approved";
                 if (command == "Deny")
                 {
                     approve = EnumApproveReview.Denied;

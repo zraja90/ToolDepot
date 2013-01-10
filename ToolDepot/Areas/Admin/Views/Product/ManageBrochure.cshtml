@@ -1,24 +1,95 @@
-﻿@using ToolDepot.Helpers
-@model ToolDepot.Models.Products.BrochureModel
-
+﻿@using Newtonsoft.Json
+@using ToolDepot.Helpers
+@using System.Web.Script.Serialization;
+@model ToolDepot.Areas.Admin.Models.Products.BrochureModel.ManageBrochureModel
 @{
     ViewBag.Title = "Manage";
 }
-<script>
-    $(function () {
-        $("#sortable").sortable();
-        $("#sortable").disableSelection();
-    });
-</script>
+
 <h2 class="pull-left">Manage</h2>
 <div class="pull-right">
     @Html.ActionLink("Upload Images", "Index", "UploadFiles")
 </div>
 '<div class="clearfix"></div>
 @Html.ActionLink("Back to Home", "Index", "Home", null, new { Area = "Admin" })
+<div class="margin-top margin-bottom">
+    <button data-bind="click: save" class="btn btn-primary">Save  All</button>
+</div>
+<table class="table table-hover table-striped">
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Description</th>
+
+        <th>Image</th>
+
+    </tr>
+    <tbody data-bind="foreach:Model,visible:Model().length>0">
+        <tr>
+            <td>
+                <input type="number" class="input-mini" data-bind="value: Ordinal" />
+            </td>
+            <td>
+                <input type="text" data-bind="value: ProductName" />
+            </td>
+            <td>
+                <input type="text" data-bind="value: ProductDescription" />
+            </td>
+
+            <td>
+                <input type="text" data-bind="value: ProductImage" />
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button data-bind="click: save" class="btn btn-primary">Save  All</button>
 
 
-<table class="table table-striped">
+<textarea name="tasks" data-bind="value: ko.toJSON(Model)"></textarea>
+
+<script src="/Scripts/knockout-2.2.0.js" type="text/javascript"></script>
+<script>
+    @{
+        var initialData = new JavaScriptSerializer().Serialize(Model);
+    }
+    var data = @Html.Raw(initialData);
+
+    function BrochureView(data) {
+        this.Ordinal = ko.observable(data.Ordinal);
+        this.ProductName = ko.observable(data.ProductName);
+        this.ProductDescription = ko.observable(data.ProductDescription);
+        this.IsActive = ko.observable(data.IsActive);
+        this.ProductImage = ko.observable(data.ProductImage);
+        this.Id = ko.observable(data.Id);
+    };
+    
+    function BrochureViewModel(data) {
+        var self = this;
+        self.Model = ko.observable([]);
+        //Map Fields from model to js fields to display
+        var mapped = $.map(data.Brochure,function (item) { return new BrochureView(item); });
+        self.Model(mapped);
+
+        self.save = function() {
+            $.ajax("ManageBrochure", {
+                data: ko.toJSON({ Brochure: self.Model }),
+                type: "post",
+                contentType: "application/json",
+                success: function(result) { alert(result); }
+            });
+        };
+    };
+
+    $(function () {
+        ko.applyBindings(new BrochureViewModel(data));
+    });
+</script>
+
+
+
+
+
+@*<table class="table table-striped">
     <tr>
         <th>#</th>
         <th>Name</th>
@@ -46,4 +117,4 @@
         </tr>
     }
 </table>
-
+*@
