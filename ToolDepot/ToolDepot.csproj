@@ -520,6 +520,8 @@
     <Content Include="Content\css\images\star-on-big.png" />
     <Content Include="Content\css\images\star-on.png" />
     <Content Include="Content\css\images\Under_Construction.jpg" />
+    <Content Include="Content\css\jquery.pnotify.default.css" />
+    <Content Include="Content\css\jquery.pnotify.default.icons.css" />
     <Content Include="Content\css\jRating.jquery.css" />
     <Content Include="Content\css\site.css" />
     <Content Include="Content\css\site.less" />
@@ -682,6 +684,8 @@
     <Content Include="Scripts\jquery-1.8.3.min.js" />
     <Content Include="Scripts\jquery-ui-1.9.2.js" />
     <Content Include="Scripts\jquery-ui-1.9.2.min.js" />
+    <Content Include="Scripts\jquery.pnotify.js" />
+    <Content Include="Scripts\jquery.pnotify.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
