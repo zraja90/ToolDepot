@@ -208,8 +208,9 @@ namespace ToolDepot.Areas.Admin.Controllers
         {
             var model = new ManageBrochureModel();
             var brochure = _brochureService.GetAll().OrderBy(x => x.Ordinal);
-            model.Brochure = brochure.Select(x => x.ToModel());
-            //ViewBag.json = JsonConvert.SerializeObject(model.Brochure);
+            model.Brochure = brochure.Select(x=>x.ToModel());
+            model.BrochureJson = JsonConvert.SerializeObject(model);
+            
             return View(model);
         }
 
@@ -222,13 +223,7 @@ namespace ToolDepot.Areas.Admin.Controllers
             {
                 foreach (var brochureItem in model.Brochure)
                 {
-                    var entity = _brochureService.GetById(brochureItem.Id);
-                    entity.ProductName = brochureItem.ProductName;
-                    entity.ProductDescription = brochureItem.ProductDescription;
-                    entity.ProductImage = brochureItem.ProductImage;
-                    entity.Ordinal = brochureItem.Ordinal;
-                    entity.IsActive = brochureItem.IsActive;
-                    _brochureService.Update(entity);
+                    _brochureService.AddOrUpdate(brochureItem.ToEntity());
                 }
                 success = "Brochure Updated";
             }

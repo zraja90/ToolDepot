@@ -8,6 +8,7 @@ namespace ToolDepot.Areas.Admin.Models.Products.BrochureModel
     public class ManageBrochureModel
     {
         public IEnumerable<BrochureItem> Brochure { get; set; }
+        public string BrochureJson { get; set; }
     }
     public class BrochureItem
     {
