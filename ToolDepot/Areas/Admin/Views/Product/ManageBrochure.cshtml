@@ -50,7 +50,6 @@
 <script src="/Scripts/jquery.pnotify.min.js"></script>
 <script>
     var data = @Html.Raw(Model.BrochureJson);
-    debugger;
     function BrochureView(data) {
         this.Ordinal = ko.observable(data.Ordinal);
         this.ProductName = ko.observable(data.ProductName);
