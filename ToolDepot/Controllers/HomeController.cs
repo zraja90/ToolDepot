@@ -45,7 +45,7 @@ namespace ToolDepot.Controllers
         public ActionResult ProductCategories()
         {
             //return RedirectToAction("Index");
-            var categories = new CategoriesModel { Categories = _productCategoryService.GetAll().OrderBy(x => x.CategoryName).ToList() };
+            var categories = new CategoriesModel { Categories = _productCategoryService.GetAll().OrderByDescending(x => x.Products.Count).ToList() };
 
             return PartialView(categories);
         }
